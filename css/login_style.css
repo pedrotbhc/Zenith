@@ -1,0 +1,112 @@
+/* login.css — versão simples, estilo parecido com o seu CSS base */
+
+body{
+  font-family: Inter, system-ui, Arial;
+  margin: 0;
+  background: #0b1220;
+  color: #e6eef8;
+}
+
+.login-wrap{
+  max-width: 520px;
+  margin: 28px auto;
+  padding: 18px;
+}
+
+.login-card{
+  background: rgba(255,255,255,0.02);
+  border-radius: 12px;
+  padding: 18px;
+  border: 1px solid rgba(255,255,255,0.02);
+}
+
+/* Header */
+.login-header{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  margin-bottom:12px;
+}
+.brand-badge{
+  width:44px;
+  height:44px;
+  border-radius:10px;
+  background: linear-gradient(90deg,#7dd3fc,#06b6d4);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#04233a;
+  font-weight:800;
+}
+.login-title{ font-size:1.1rem; font-weight:800; }
+.login-sub{ font-size:0.95rem; color:#98a0b3; margin-top:4px; }
+
+/* controls */
+.controls{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  margin-bottom:10px;
+}
+input#groupInput{
+  flex:1;
+  padding:10px 12px;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,0.03);
+  background:#071427;
+  color:inherit;
+  font-size:1rem;
+}
+input#groupInput::placeholder{ color:#98a0b3; }
+
+/* buttons */
+.btn{
+  padding:8px 12px;
+  border-radius:8px;
+  border:0;
+  cursor:pointer;
+  font-weight:700;
+}
+.btn.primary{
+  background:#7dd3fc;
+  color:#04233a;
+}
+.btn.ghost{
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.04);
+  color:inherit;
+}
+
+/* status */
+.status{
+  margin-top:8px;
+  color:#98a0b3;
+  font-size:0.95rem;
+}
+.status.error{ color:#ff7b7b; font-weight:700; }
+
+/* hints */
+.hints{ display:flex; gap:8px; margin-top:12px; flex-wrap:wrap; }
+.hint{
+  background: rgba(255,255,255,0.01);
+  border: 1px solid rgba(255,255,255,0.02);
+  padding:8px 10px;
+  border-radius:8px;
+  color:#98a0b3;
+  font-size:0.9rem;
+}
+
+/* footer */
+.login-footer{ margin-top:12px; text-align:center; color:#98a0b3; font-size:0.85rem; }
+
+/* utilities */
+.hidden{ display:none !important; }
+.center{ display:flex; align-items:center; justify-content:center; }
+
+/* responsive */
+@media (max-width:420px){
+  .login-wrap{ margin:16px; padding:14px; }
+  .brand-badge{ width:40px; height:40px; font-size:16px; }
+  input#groupInput{ padding:10px; font-size:0.95rem; }
+  .btn{ padding:9px 10px; font-size:0.92rem; }
+}

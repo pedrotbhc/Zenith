@@ -1,0 +1,119 @@
+body{
+  font-family: Inter, system-ui, Arial;
+  margin: 0;
+  background: #0b1220;
+  color: #e6eef8;
+}
+
+.container{
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 18px
+}
+
+.tabs{
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px
+}
+
+.tab{
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #071427;
+  border: 1px solid rgba(255,255,255,0.03);
+  cursor: pointer
+}
+
+.tab.active{
+  outline: 2px solid #7dd3fc
+}
+
+.panel{
+  background: rgba(255,255,255,0.02);
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.02);
+  width: 83vw;
+  height: 150vw;
+}
+
+.controls{
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 10px
+}
+
+.btn{
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 0;
+  cursor: pointer
+}
+
+.btn.primary{
+  background: #7dd3fc;
+  color: #04233a
+}
+
+.btn.ghost{
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.04);
+  color: inherit
+}
+
+.status{
+  margin-left: 8px;
+  color: #98a0b3
+}
+
+.questions{
+  display: grid;
+  gap: 10px;
+  margin-top: 10px
+}
+
+.question{
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.01);
+  border: 1px solid rgba(255,255,255,0.02)
+}
+
+.prompt{
+  font-weight: 600;
+  margin-bottom: 8px
+}
+
+.choices{
+  display: flex;
+  flex-direction: column;
+  gap: 6px
+}
+
+.overlay{
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: ⠀(2,6,23,0.75);
+  color: #fff;
+  font-size: 20px
+}
+
+.hidden{
+  display: none
+}
+
+textarea#resultJson{
+  width: 77vw;
+  height: 115vw;
+  background: #071427;
+  color: #ffffffff;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid;
+  border: 1px solid rgba(255,255,255,0.03)
+}

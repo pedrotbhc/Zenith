@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecionamento Único</title>
+    <script>
+        if (!sessionStorage.getItem('redirecionamentoRealizado')) {
+            sessionStorage.setItem('redirecionamentoRealizado', 'true');
+            window.location.href = 'game/lobby.html';
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
