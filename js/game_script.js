@@ -35,7 +35,7 @@ loadQuestions();
 // === Config ===
 const STAGES = ['easy','medium','hard'];
 const STAGE_LABEL = { easy: 'Fácil', medium: 'Médio', hard: 'Difícil' };
-const STAGE_DURATION = 3; // segundos
+const STAGE_DURATION = 20; // segundos
 const INTERVAL_DURATION = 2; // segundos
 const BASE_POINTS = { easy:100, medium:250, hard:500 };
 
@@ -44,6 +44,7 @@ let stageIndex = null, stage = null, stageStartTs = null, timerInterval = null, 
 let answers = { easy: [], medium: [], hard: [] };
 let totalPoints = 0;
 let currentQuestionIndex = 0;
+let questionStartTs = null;
 
 // === DOM ===
 const tabLobby = document.getElementById('tabLobby');
@@ -158,10 +159,12 @@ function renderStageHeader(){
   intermissionBanner.classList.add('hidden');
 }
 
+// === renderNextQuestion (substitua sua função existente por esta) ===
 function renderNextQuestion(){
   const arr = getQuestionsArray(stage) || [];
   if(currentQuestionIndex >= arr.length){
     questionsContainer.innerHTML = '<div style="color:#98a0b3">Todas perguntas respondidas ou tempo esgotado.</div>';
+    questionStartTs = null;
     return;
   }
   const q = arr[currentQuestionIndex];
@@ -176,23 +179,45 @@ function renderNextQuestion(){
     choices.appendChild(btn);
   });
   qDiv.appendChild(choices); questionsContainer.appendChild(qDiv);
+
+  // MARCA o instante em que a pergunta foi exibida (usado para calcular tempo por pergunta)
+  questionStartTs = Date.now();
 }
 
+// === onAnswerSelected (substitua a versão antiga por esta) ===
 function onAnswerSelected(q, letter){
   const now = Date.now();
-  const timeTaken = (now - stageStartTs) / 1000;
-  let awarded = null;
+  // usa tempo desde que a pergunta foi mostrada (questionStartTs)
+  const timeTaken = questionStartTs ? (now - questionStartTs) / 1000 : 0; // em segundos
+
+  let awarded = 0;
   if(q && q.correct){
     const isCorrect = (letter === q.correct);
     if(isCorrect){
-      const ratio = Math.max(0, Math.min(1, timeTaken / STAGE_DURATION));
-      const bonusFactor = 0.5 * (1 - ratio);
-      awarded = Math.round(BASE_POINTS[stage] * (1 + bonusFactor));
-    } else { awarded = 0; }
+      // Pontuação decai linearmente com o tempo:
+      // resposta imediata => BASE_POINTS[stage]
+      // resposta no limite (STAGE_DURATION) => ~0
+      // ajuste STAGE_DURATION para o tempo por pergunta desejado (segundos)
+      const t = Math.max(0, timeTaken);
+      const frac = Math.min(1, t / STAGE_DURATION); // 0..1
+      awarded = Math.round(BASE_POINTS[stage] * Math.max(0, 1 - frac));
+    } else {
+      awarded = 0;
+    }
   }
-  answers[stage][currentQuestionIndex] = { chosen: letter, time: timeTaken, points: awarded, correct: (q && q.correct) ? q.correct : null };
+
+  // salva resposta (time em segundos, pontos calculados)
+  answers[stage][currentQuestionIndex] = {
+    chosen: letter,
+    time: timeTaken,
+    points: awarded,
+    correct: (q && q.correct) ? q.correct : null
+  };
+
   recalcTotal();
-  currentQuestionIndex++; renderNextQuestion();
+  currentQuestionIndex++;
+  // ao renderizar próxima pergunta, renderNextQuestion vai resetar questionStartTs
+  renderNextQuestion();
 }
 
 function startStageTimer(){

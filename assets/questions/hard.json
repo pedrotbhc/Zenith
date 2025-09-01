@@ -1,387 +1,167 @@
 [
   {
     "id": "hard01",
-    "prompt": "",
+    "prompt": "O Sargaço (Fucus serratus) pode cruzar em laboratório com Fucus distichus, mas na natureza isso não ocorre: a F. serratus libera gametas na maré baixa de luas nova e cheia, enquanto a F. distichus libera na maré baixa de quartos lunares diferentes — o timing reprodutivo impede o encontro dos gametas. Este padrão é um exemplo de:",
     "choices": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
+      "a": "Isolamento geográfico",
+      "b": "Isolamento temporal (diferença no timing reprodutivo)",
+      "c": "Isolamento por incompatibilidade de gametas",
+      "d": "Isolamento ecológico (diferença de habitat)"
     },
-    "correct": ""
+    "correct": "b"
   },
-    {
+  {
     "id": "hard02",
-    "prompt": "",
+    "prompt": "Numa população em equilíbrio de Hardy-Weinberg (q = 0,2), uma seca mata aleatoriamente 980 de 1000 plantas, restando 20. Esse colapso demográfico deixa apenas uma amostra pequena e aleatória da diversidade genética original, alterando fortemente as frequências alélicas. Esse evento clássico é chamado de:",
     "choices": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
+      "a": "Seleção Natural Direcional",
+      "b": "Efeito Fundador",
+      "c": "Gargalo Genético (ou Gargalo de População)",
+      "d": "Mutação em Larga Escala"
     },
-    "correct": ""
+    "correct": "c"
   },
-    {
+  {
     "id": "hard03",
-    "prompt": "",
+    "prompt": "No peixe Perissodus microlepis há indivíduos com boca para a direita e para a esquerda; quando um tipo fica muito comum, as presas ficam mais atentas a esse flanco, dando vantagem aos raros — um equilíbrio dinâmico que mantém ambas as formas. Esse mecanismo é um exemplo de:",
     "choices": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
+      "a": "Seleção Direcional",
+      "b": "Seleção Estabilizadora",
+      "c": "Seleção Balanceadora (ou Balanceamento)",
+      "d": "Deriva Genética"
     },
-    "correct": ""
+    "correct": "c"
   },
-    {
+  {
     "id": "hard04",
-    "prompt": "",
+    "prompt": "Uma duplicação de todo o genoma aconteceu em um peixe do gênero Crenicichla. Ter cópias extras de genes permite que algumas cópias mantenham a função original enquanto outras acumulam mutações que podem gerar funções novas — por isso esse evento é importante para inovação evolutiva. Isso ilustra:",
     "choices": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
+      "a": "Causa extinção imediata devido a erros genéticos fatais",
+      "b": "Fornece material genético 'extra' que pode evoluir novas funções",
+      "c": "Impede imediatamente o cruzamento com populações não duplicadas",
+      "d": "Reverte todas as adaptações anteriores do organismo"
     },
-    "correct": ""
+    "correct": "b"
   },
-    {
+  {
     "id": "hard05",
-    "prompt": "",
+    "prompt": "O rato-cego Heterocephalus glaber tem metabolismo reduzido, organização eusocial e baixa incidência de câncer — características que fazem sentido quando você considera pressões seletivas do seu nicho subterrâneo (baixo oxigênio, pouca comida, vida em túneis) e estratégias cooperativas. A explicação evolutiva mais plausível enfatiza:",
     "choices": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
+      "a": "Eles são uma forma de transição entre répteis e mamíferos",
+      "b": "A evolução é contingente: adaptações a pressões seletivas específicas do seu nicho",
+      "c": "Sofreram mais mutações do que qualquer outro mamífero",
+      "d": "Sua linhagem parou de evoluir há milhões de anos"
     },
-    "correct": ""
+    "correct": "b"
   },
-    {
+  {
     "id": "hard06",
-    "prompt": "",
+    "prompt": "Casos de 'evolução em tempo real' (por exemplo bactérias que se tornam resistentes a antibióticos em poucos anos) fornecem evidências diretas e observáveis de seleção natural agindo sobre variação existente na população. O que esse conceito demonstra melhor é que:",
     "choices": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
+      "a": "Permite prever o futuro evolutivo de qualquer espécie com exatidão",
+      "b": "Fornece evidências diretas e observáveis da ação da seleção natural",
+      "c": "Significa que a evolução sempre ocorre rapidamente",
+      "d": "Refuta a ideia de que mutações são matéria-prima da evolução"
     },
-    "correct": ""
+    "correct": "b"
   },
-    {
+  {
     "id": "hard07",
-    "prompt": "",
+    "prompt": "A 'Hipótese da Rainha Vermelha' descreve uma corrida contínua de adaptações: por exemplo, quando hospedeiros evoluem novas defesas, parasitas que conseguem contorná-las têm vantagem, e assim por diante — uma corrida armamentista evolutiva que exige evolução constante só para manter a aptidão relativa. Esse exemplo se aplica particularmente a:",
     "choices": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
+      "a": "Corrida armamentista evolutiva entre parasitas e hospedeiros",
+      "b": "Evolução convergente de tubarões e golfinhos",
+      "c": "Especiação alopátrica de tentilhões nas Galápagos",
+      "d": "Adaptação de cactos para ambientes áridos"
     },
-    "correct": ""
+    "correct": "a"
   },
-    {
+  {
     "id": "hard08",
-    "prompt": "",
+    "prompt": "Tiktaalik roseae tem características intermediárias (nadadeiras com ossos robustos parecidos com membros, pescoço, etc.) e foi encontrado nas camadas geológicas onde modelos previam um fóssil de transição — por isso sua descoberta é um forte exemplo de como a teoria evolutiva faz previsões testáveis. A importância desse achado é que:",
     "choices": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
+      "a": "É um 'elo perdido' quase perfeito entre peixes e tetrápodes, conforme previsto pelas evidências",
+      "b": "É o fóssil mais antigo já encontrado",
+      "c": "Provou que a evolução dos peixes para tetrápodes ocorreu em oceanos profundos",
+      "d": "Demonstrou que a teoria da evolução é infalível"
     },
-    "correct": ""
+    "correct": "a"
   },
-    {
+  {
     "id": "hard09",
-    "prompt": "",
+    "prompt": "Convergência evolutiva ocorre quando linhagens não aparentadas evoluem soluções semelhantes por pressões semelhantes. Porém, nem toda semelhança é convergente — por exemplo, quando estruturas compartilham uma origem comum (mesma estrutura ancestral), trata-se de homologia. Com isso em mente, qual dos pares abaixo NÃO é um exemplo de convergência?",
     "choices": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
+      "a": "A forma hidrodinâmica de um tubarão e de um golfinho",
+      "b": "As asas de uma ave e de uma borboleta",
+      "c": "As asas de um morcego e as asas de um pardal",
+      "d": "Adaptação de cactos (Américas) e euforbiáceas (África) para ambientes áridos"
     },
-    "correct": ""
+    "correct": "c"
   },
-    {
+  {
     "id": "hard10",
-    "prompt": "",
+    "prompt": "A Seleção de Parentesco (Kin Selection) usa uma lógica custo/benefício ponderada pelo parentesco (a famosa inequação de Hamilton C < r × B). Isso explica, por exemplo, por que operárias estéreis em insetos sociais podem favorecer genes que 'ajudam' a rainha: porque estão protegendo cópias dos seus próprios genes em parentes próximos. A proposição central é que:",
     "choices": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
+      "a": "O altruísmo só evolui em espécies inteligentes",
+      "b": "Um gene altruísta pode se espalhar se o custo for menor que o benefício ponderado pelo grau de parentesco",
+      "c": "A seleção natural atua sempre para o bem da espécie",
+      "d": "O altruísmo é sempre vantagem direta para o indivíduo que o pratica"
     },
-    "correct": ""
+    "correct": "b"
   },
-    {
+  {
     "id": "hard11",
-    "prompt": "",
+    "prompt": "Exaptação (cooptação) descreve casos em que uma estrutura já existente, que originalmente cumpria outra função (por exemplo isolamento térmico ou display), é mais tarde aproveitada para uma nova função (como o voo). Um exemplo clássico são as penas, que antes da aviação tinham funções diferentes. Esse conceito mostra que:",
     "choices": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
+      "a": "Todas as características evoluem para a função que desempenham hoje",
+      "b": "Uma estrutura pode evoluir para uma função inicial e depois ser cooptada para outra diferente",
+      "c": "A evolução é sempre lenta e gradual",
+      "d": "Órgãos vestigiais são rapidamente eliminados pela seleção"
     },
-    "correct": ""
+    "correct": "b"
   },
-    {
+  {
     "id": "hard12",
-    "prompt": "",
+    "prompt": "A Teoria Endossimbiótica propõe que organelas como mitocôndrias e cloroplastos vieram de antigas bactérias englobadas; evidências incluem DNA circular nessas organelas, divisão por fissão e semelhanças ribossômicas. Essa teoria é usada para explicar a origem de:",
     "choices": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
+      "a": "O primeiro organismo procariota",
+      "b": "O núcleo celular",
+      "c": "Mitocôndrias e cloroplastos nas células eucarióticas",
+      "d": "Os vírus"
     },
-    "correct": ""
+    "correct": "c"
   },
-    {
+  {
     "id": "hard13",
-    "prompt": "",
+    "prompt": "Evolução regressiva (ou perda evolutiva) ocorre quando estruturas complexas que são dispendiosas deixam de ser vantajosas num novo ambiente e acabam sendo reduzidas ou perdidas — como olhos e pigmentação em peixes de cavernas. Esse fenómeno é melhor descrito por:",
     "choices": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
+      "a": "Uma espécie volta exatamente a ser como seu ancestral",
+      "b": "Uma espécie perde características complexas que se tornaram dispensáveis ou custosas",
+      "c": "A seleção natural deixa de atuar",
+      "d": "O tamanho do cérebro diminui sistematicamente ao longo do tempo"
     },
-    "correct": ""
+    "correct": "b"
   },
-    {
+  {
     "id": "hard14",
-    "prompt": "",
+    "prompt": "Nicho ecológico é um conceito multidimensional que vai além do habitat: inclui recursos usados, interações com outras espécies, tolerâncias ambientais e o 'papel' funcional de um organismo no ecossistema. Esse entendimento ajuda a explicar, por exemplo, por que duas espécies não podem ocupar exatamente o mesmo conjunto de recursos por muito tempo. O nicho refere-se a:",
     "choices": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
+      "a": "Apenas ao tipo de alimento que o organismo come",
+      "b": "Ao 'papel' ou 'profissão' do organismo no ecossistema, incluindo recursos e interações",
+      "c": "Exclusivamente ao local físico onde constrói o ninho ou toca",
+      "d": "A um espaço geográfico delimitado onde a espécie é a única presente"
     },
-    "correct": ""
+    "correct": "b"
   },
-    {
+  {
     "id": "hard15",
-    "prompt": "",
+    "prompt": "Dizer 'a evolução é apenas uma teoria' é um equívoco porque, no jargão científico, 'teoria' é uma explicação abrangente e bem sustentada por múltiplas linhas de evidência (fósseis, genética, embriologia, biogeografia etc.). Assim, a palavra 'teoria' na ciência significa:",
     "choices": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
+      "a": "Uma hipótese ou palpite não testado",
+      "b": "Uma explicação abrangente e bem sustentada para um fenômeno natural",
+      "c": "Que existem muitas dúvidas sobre a sua validade",
+      "d": "Sinônimo de 'lei' que descreve apenas como algo acontece"
     },
-    "correct": ""
-  },
-    {
-    "id": "hard16",
-    "prompt": "",
-    "choices": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
-    },
-    "correct": ""
-  },
-    {
-    "id": "hard17",
-    "prompt": "",
-    "choices": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
-    },
-    "correct": ""
-  },
-    {
-    "id": "hard18",
-    "prompt": "",
-    "choices": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
-    },
-    "correct": ""
-  },
-    {
-    "id": "hard19",
-    "prompt": "",
-    "choices": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
-    },
-    "correct": ""
-  },
-    {
-    "id": "hard20",
-    "prompt": "",
-    "choices": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
-    },
-    "correct": ""
-  },
-    {
-    "id": "hard21",
-    "prompt": "",
-    "choices": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
-    },
-    "correct": ""
-  },
-    {
-    "id": "hard22",
-    "prompt": "",
-    "choices": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
-    },
-    "correct": ""
-  },
-    {
-    "id": "hard23",
-    "prompt": "",
-    "choices": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
-    },
-    "correct": ""
-  },
-    {
-    "id": "hard24",
-    "prompt": "",
-    "choices": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
-    },
-    "correct": ""
-  },
-    {
-    "id": "hard25",
-    "prompt": "",
-    "choices": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
-    },
-    "correct": ""
-  },
-    {
-    "id": "hard26",
-    "prompt": "",
-    "choices": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
-    },
-    "correct": ""
-  },
-    {
-    "id": "hard27",
-    "prompt": "",
-    "choices": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
-    },
-    "correct": ""
-  },
-    {
-    "id": "hard28",
-    "prompt": "",
-    "choices": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
-    },
-    "correct": ""
-  },
-    {
-    "id": "hard29",
-    "prompt": "",
-    "choices": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
-    },
-    "correct": ""
-  },
-    {
-    "id": "hard30",
-    "prompt": "",
-    "choices": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
-    },
-    "correct": ""
-  },
-    {
-    "id": "hard31",
-    "prompt": "",
-    "choices": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
-    },
-    "correct": ""
-  },
-    {
-    "id": "hard32",
-    "prompt": "",
-    "choices": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
-    },
-    "correct": ""
-  },
-    {
-    "id": "hard33",
-    "prompt": "",
-    "choices": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
-    },
-    "correct": ""
-  },
-    {
-    "id": "hard34",
-    "prompt": "",
-    "choices": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
-    },
-    "correct": ""
-  },
-    {
-    "id": "hard35",
-    "prompt": "",
-    "choices": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
-    },
-    "correct": ""
+    "correct": "b"
   }
 ]

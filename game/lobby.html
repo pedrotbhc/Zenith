@@ -10,7 +10,7 @@
   <div class="container">
     <h1>Entrar no grupo</h1>
     <div class="controls">
-      <input type="text" id="groupInput" placeholder="Digite o grupo (ex: grupo1)" class="btn ghost" style="flex:1">
+      <input type="text" id="groupInput" placeholder="Digite o usuário..." class="btn ghost" style="flex:1">
       <button id="enterBtn" class="btn primary">Entrar</button>
     </div>
     <div id="loginMessage" class="status"></div>
@@ -25,7 +25,7 @@
       const group = groupInput.value.trim().toLowerCase();
 
       if (!group.match(/^grupo([1-9]|1[0-2])$/)) {
-        loginMessage.textContent = 'Grupo inválido! Use grupo1 a grupo12.';
+        loginMessage.textContent = 'Usuário invalido.';
         return;
       }
 
