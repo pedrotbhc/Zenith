@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Zenith — Perguntas</title>
+<style>
+/* ===== base / reset ===== */
+* { box-sizing: border-box; }
+html,body { height:100%; }
+body {
+  margin:0;
+  font-family: Inter, system-ui, Arial, sans-serif;
+  background: linear-gradient(180deg,#071020 0%, #0b1220 100%);
+  color:#e6eef8;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  display:flex;
+  justify-content:center;
+  padding:20px;
+}
+
+/* ===== container ===== */
+.app {
+  width:100%;
+  max-width:760px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.03);
+  border-radius:14px;
+  padding:18px;
+  box-shadow: 0 12px 40px rgba(2,6,23,0.6);
+  overflow:hidden;
+}
+
+/* ===== header (Zenith) ===== */
+.header {
+  display:flex;
+  gap:12px;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:14px;
+}
+.brand {
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.logo {
+  width:52px;height:52px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#7dd3fc,#06b6d4);
+  color:#04233a;font-weight:800;font-size:18px;
+  box-shadow: 0 8px 22px rgba(6,40,60,0.15);
+}
+.title {
+  font-size:1.25rem;
+  font-weight:800;
+  letter-spacing:0.2px;
+}
+.subtitle {
+  color:#98a0b3;
+  font-size:0.9rem;
+  margin-top:2px;
+}
+
+/* ===== header right (timer & score) ===== */
+.header-right {
+  text-align:right;
+  min-width:110px;
+}
+.timer-label { font-size:0.75rem; color:#98a0b3; }
+.timer-value { font-weight:800; font-size:1.05rem; margin-top:4px; }
+
+/* ===== panel (game area) ===== */
+.panel {
+  display:block;
+  width:100%;
+  margin-top:6px;
+}
+.stage-info {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:12px;
+}
+.stage-title { font-weight:700; font-size:1.05rem; }
+.stage-sub { color:#98a0b3; font-size:0.9rem; }
+
+/* ===== intermission banner ===== */
+#intermissionBanner {
+  display:none;
+  margin-bottom:12px;
+  padding:10px;
+  border-radius:10px;
+  background: linear-gradient(180deg, rgba(125,211,252,0.03), rgba(6,166,178,0.02));
+  border: 1px solid rgba(125,211,252,0.06);
+  color:#cdf7ff;
+}
+
+/* ===== questions list ===== */
+#questionsContainer { display:block; margin-top:6px; }
+.question-card {
+  background: rgba(255,255,255,0.01);
+  border: 1px solid rgba(255,255,255,0.02);
+  border-radius:10px;
+  padding:12px;
+  margin-bottom:12px;
+}
+.prompt { font-weight:700; margin-bottom:10px; font-size:1rem; }
+.choices { display:grid; gap:8px; }
+.choice-btn {
+  display:block;
+  width:100%;
+  text-align:left;
+  padding:10px 12px;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,0.03);
+  background: linear-gradient(180deg, rgba(255,255,255,0.006), rgba(255,255,255,0.003));
+  color:inherit;
+  cursor:pointer;
+  transition: transform .08s, box-shadow .12s, background .12s;
+  font-weight:700;
+}
+.choice-btn:active { transform:translateY(1px); }
+.choice-btn:hover { box-shadow: 0 10px 24px rgba(3,9,20,0.35); }
+
+/* state after answered (simple visual) */
+.choice-btn.answered { opacity:0.6; pointer-events:none; }
+.choice-btn.correct { outline: 2px solid rgba(125,211,252,0.14); background: rgba(125,211,252,0.03); color: #7dd3fc; }
+.choice-btn.wrong { opacity:0.6; background: rgba(255,107,107,0.03); color:#ff9b9b; }
+
+/* footer small info */
+.footer-note { color:#98a0b3; font-size:0.9rem; margin-top:10px; }
+
+/* responsive */
+@media (max-width:520px){
+  .header { flex-direction:column; align-items:flex-start; gap:8px; }
+  .header-right { text-align:left; width:100%; display:flex; justify-content:space-between; align-items:center; }
+  .logo { width:46px;height:46px;font-size:16px; }
+  .timer-value { font-size:1rem; }
+  .app { padding:14px; border-radius:12px; }
+}
+</style>
+</head>
+<body>
+  <main class="app" role="main" aria-live="polite">
+    <header class="header">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">Z</div>
+        <div>
+          <div class="title">Zenith</div>
+          <div class="subtitle">Evolução · Conhecimento · Ritmo</div>
+        </div>
+      </div>
+      <div class="header-right" aria-hidden="false">
+        <div class="timer-label">Tempo do estágio</div>
+        <div id="timerDisplay" class="timer-value">00:00</div>
+      </div>
+    </header>
+
+    <section class="panel" aria-labelledby="stageTitle">
+      <div class="stage-info">
+        <div>
+          <div id="stageTitle" class="stage-title">Preparando...</div>
+          <div id="stageSubtitle" class="stage-sub">Carregando perguntas…</div>
+        </div>
+        <div id="stageProgress" class="stage-sub" aria-hidden="true">Estágio —</div>
+      </div>
+
+      <div id="intermissionBanner" role="status">Intervalo — próximo estágio em <strong id="intermissionTimer">5</strong>s</div>
+
+      <div id="questionsContainer" aria-live="polite"></div>
+
+      <div class="footer-note">As fases duram 20 segundos. Pontos por pergunta decaem conforme o tempo restante do estágio.</div>
+    </section>
+  </main>
+
+<script>
+(() => {
+  'use strict';
+
+  const PATHS = {
+    easy: '../assets/questions/easy.json',
+    medium: '../assets/questions/medium.json',
+    hard: '../assets/questions/hard.json'
+  };
+  const STAGES = ['easy','medium','hard'];
+  const STAGE_LABEL = { easy: 'Fácil', medium: 'Médio', hard: 'Difícil' };
+  const STAGE_DURATION = 3; // segundos por estágio
+  const INTERVAL_DURATION = 5; // segundos entre estágios
+  const BASE_POINTS = { easy:100, medium:250, hard:500 };
+
+  // state
+  let questions = { easy:[], medium:[], hard:[] };
+  let stageIndex = -1;
+  let stage = null;
+  let currentQuestionIndex = 0;
+  let stageStartTs = null;
+  let timerInterval = null;
+  let intermissionInterval = null;
+  let answers = { easy:[], medium:[], hard:[] };
+  let playing = false;
+
+  // DOM
+  const timerDisplay = document.getElementById('timerDisplay');
+  const stageTitleEl = document.getElementById('stageTitle');
+  const stageSubtitleEl = document.getElementById('stageSubtitle');
+  const stageProgressEl = document.getElementById('stageProgress');
+  const intermissionBanner = document.getElementById('intermissionBanner');
+  const intermissionTimerEl = document.getElementById('intermissionTimer');
+  const questionsContainer = document.getElementById('questionsContainer');
+
+  // load with Promise.allSettled, fallback minimal data
+  async function loadQuestions(){
+    try {
+      const promises = Object.entries(PATHS).map(([k,p]) =>
+        fetch(p).then(r => { if(!r.ok) throw new Error('bad'); return r.json(); }).then(data => ({k,data}))
+      );
+      const results = await Promise.allSettled(promises);
+      results.forEach(r => {
+        if(r.status === 'fulfilled' && r.value){
+          if(Array.isArray(r.value.data)) questions[r.value.k] = r.value.data;
+        }
+      });
+    } catch(e){
+      console.warn('loadQuestions error', e);
+    } finally {
+      // fallback small sets if empty
+      if(!Array.isArray(questions.easy) || questions.easy.length === 0){
+        questions.easy = [
+          { prompt: '2 + 2 = ?', choices:{ a:'3', b:'4', c:'5', d:'6' }, correct:'b' },
+          { prompt: 'Cor do céu em dia claro?', choices:{ a:'Azul', b:'Verde', c:'Vermelho', d:'Amarelo' }, correct:'a' }
+        ];
+      }
+      if(!Array.isArray(questions.medium) || questions.medium.length === 0){
+        questions.medium = [
+          { prompt: 'Capital do Brasil?', choices:{ a:'São Paulo', b:'Brasília', c:'Rio', d:'Salvador' }, correct:'b' }
+        ];
+      }
+      if(!Array.isArray(questions.hard) || questions.hard.length === 0){
+        questions.hard = [
+          { prompt: 'Raiz quadrada de 144?', choices:{ a:'10', b:'11', c:'12', d:'13' }, correct:'c' }
+        ];
+      }
+    }
+  }
+
+  function updateStageHeader(){
+    stageTitleEl.textContent = stage ? `Estágio: ${STAGE_LABEL[stage]}` : 'Nenhum estágio ativo';
+    stageSubtitleEl.textContent = stage ? `Valor por resposta: ${BASE_POINTS[stage]} pts` : 'Carregando perguntas…';
+    stageProgressEl.textContent = stage ? `Estágio ${stageIndex+1}/${STAGES.length}` : 'Estágio —';
+  }
+
+  function renderQuestion(){
+    const arr = questions[stage] || [];
+    if(currentQuestionIndex >= arr.length){
+      // all questions answered for this stage
+      questionsContainer.innerHTML = `<div class="question-card"><div class="prompt" style="color:#98a0b3">Todas perguntas respondidas — aguardando fim do estágio.</div></div>`;
+      return;
+    }
+    const q = arr[currentQuestionIndex];
+    questionsContainer.innerHTML = '';
+    const card = document.createElement('div'); card.className = 'question-card';
+    const prompt = document.createElement('div'); prompt.className = 'prompt'; prompt.textContent = q.prompt || '';
+    const choices = document.createElement('div'); choices.className = 'choices';
+
+    ['a','b','c','d'].forEach(letter => {
+      const btn = document.createElement('button');
+      btn.className = 'choice-btn';
+      btn.type = 'button';
+      btn.innerText = `${letter.toUpperCase()}: ${ (q.choices && q.choices[letter]) ? q.choices[letter] : '' }`;
+      btn.addEventListener('click', () => {
+        handleAnswer(btn, q, letter);
+      });
+      choices.appendChild(btn);
+    });
+
+    card.appendChild(prompt);
+    card.appendChild(choices);
+    questionsContainer.appendChild(card);
+  }
+
+  function handleAnswer(btn, q, letter){
+    if(!playing) return;
+    // prevent double-answer
+    btn.parentElement.querySelectorAll('.choice-btn').forEach(b => b.classList.add('answered', 'disabled'));
+
+    const elapsed = (Date.now() - stageStartTs)/1000;
+    const remaining = Math.max(0, STAGE_DURATION - elapsed);
+    const points = (q.correct === letter) ? Math.round(BASE_POINTS[stage] * (remaining / STAGE_DURATION)) : 0;
+
+    answers[stage] = answers[stage] || [];
+    answers[stage][currentQuestionIndex] = { chosen: letter, points, correct: q.correct, time: elapsed };
+
+    // visual feedback
+    if(q.correct === letter){
+      btn.classList.add('correct');
+    } else {
+      btn.classList.add('wrong');
+      // mark correct button
+      const buttons = btn.parentElement.querySelectorAll('.choice-btn');
+      buttons.forEach(b => {
+        if(b !== btn && b.innerText.trim().toLowerCase().startsWith(q.correct.toUpperCase()+':')) b.classList.add('correct');
+      });
+    }
+
+    currentQuestionIndex++;
+    // render next question only if still have question left (but do NOT end stage early)
+    const arr = questions[stage] || [];
+    if(currentQuestionIndex < arr.length){
+      setTimeout(renderQuestion, 350);
+    } else {
+      // show message that all answered and wait for stage timer to finish
+      setTimeout(() => {
+        renderQuestion();
+      }, 350);
+    }
+  }
+
+  function startStageTimer(){
+    clearInterval(timerInterval);
+    stageStartTs = Date.now();
+    updateTimerDisplay();
+    timerInterval = setInterval(() => {
+      updateTimerDisplay();
+      const elapsed = (Date.now() - stageStartTs)/1000;
+      const remaining = Math.max(0, STAGE_DURATION - elapsed);
+      if(remaining <= 0){
+        clearInterval(timerInterval);
+        // ensure we mark unanswered questions then proceed to intermission
+        markUnansweredInStage();
+        startIntermission();
+      }
+    }, 200);
+  }
+
+  function updateTimerDisplay(){
+    const elapsed = stageStartTs ? (Date.now() - stageStartTs)/1000 : 0;
+    const remaining = Math.max(0, STAGE_DURATION - elapsed);
+    const s = Math.max(0, Math.ceil(remaining));
+    const mm = String(Math.floor(s/60)).padStart(2,'0');
+    const ss = String(s%60).padStart(2,'0');
+    timerDisplay.textContent = `${mm}:${ss}`;
+  }
+
+  function markUnansweredInStage(){
+    const arr = questions[stage] || [];
+    answers[stage] = answers[stage] || [];
+    for(let i=0;i<arr.length;i++){
+      if(!answers[stage][i]){
+        answers[stage][i] = { chosen: null, points: 0, correct: arr[i].correct || null, time: STAGE_DURATION };
+      }
+    }
+  }
+
+  function startIntermission(){
+    intermissionBanner.style.display = 'block';
+    let rem = INTERVAL_DURATION;
+    intermissionTimerEl.textContent = rem;
+    intermissionInterval && clearInterval(intermissionInterval);
+    intermissionInterval = setInterval(() => {
+      rem--;
+      intermissionTimerEl.textContent = rem;
+      if(rem <= 0){
+        clearInterval(intermissionInterval);
+        intermissionBanner.style.display = 'none';
+        nextStage();
+      }
+    }, 1000);
+  }
+
+  function nextStage(){
+    stageIndex++;
+    if(stageIndex >= STAGES.length){
+      // finished all stages
+      finishGame();
+      return;
+    }
+    stage = STAGES[stageIndex];
+    currentQuestionIndex = 0;
+    answers[stage] = answers[stage] || [];
+    updateStageHeader();
+    renderQuestion();
+    playing = true;
+    startStageTimer();
+  }
+
+  function buildResultsJson(){
+    const out = { totalPoints: 0, stages: [] };
+    for(const s of STAGES){
+      const arr = questions[s] || [];
+      const stageObj = { stage: s, label: STAGE_LABEL[s], questions: [], points: 0 };
+      let sum = 0;
+      for(let i=0;i<arr.length;i++){
+        const q = arr[i];
+        const a = (answers[s] && answers[s][i]) ? answers[s][i] : { chosen: null, points: 0, correct: q.correct || null, time: null };
+        stageObj.questions.push({ index: i, prompt: q.prompt || null, chosen: a.chosen, correct: a.correct, time: a.time, points: a.points });
+        sum += (typeof a.points === 'number') ? a.points : 0;
+      }
+      stageObj.points = sum;
+      out.stages.push(stageObj);
+      out.totalPoints += sum;
+    }
+    return out;
+  }
+
+  function finishGame(){
+    // clear intervals
+    clearInterval(timerInterval);
+    clearInterval(intermissionInterval);
+    playing = false;
+
+    const results = buildResultsJson();
+    try { localStorage.setItem('quiz_results', JSON.stringify(results)); } catch(e){ console.warn('save fail', e); }
+
+    // redirect to results page
+    window.location.href = 'result_json.html';
+  }
+
+  // Init
+  (async function init(){
+    await loadQuestions();
+    // auto-start immediately
+    stageIndex = -1;
+    nextStage();
+  })();
+
+})();
+</script>
+</body>
+</html>

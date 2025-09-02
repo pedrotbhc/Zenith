@@ -1,40 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Login - Evolution Of Life</title>
-  <link rel="stylesheet" href="../css/login_style.css"> <!-- seu CSS já existente -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Jogo de Perguntas — Lobby</title>
+  <link rel="stylesheet" href="../css/lobby_style.css">
 </head>
 <body>
   <div class="container">
-    <h1>Entrar no grupo</h1>
-    <div class="controls">
-      <input type="text" id="groupInput" placeholder="Digite o usuário..." class="btn ghost" style="flex:1">
-      <button id="enterBtn" class="btn primary">Entrar</button>
+    <div class="tabs">
+      <div class="tab active">Lobby</div>
     </div>
-    <div id="loginMessage" class="status"></div>
+
+    <div class="panel" id="panelLobby">
+      <h2>Lobby</h2>
+      <p>Bem-vindo! Clique em <strong>Iniciar Jogo</strong> para começar.</p>
+
+      <div class="controls">
+        <button class="btn primary" id="startGameBtn">Iniciar Jogo</button>
+        <button class="btn ghost" id="resetBtn">Resetar</button>
+        <div class="status" id="lobbyStatus">Pronto</div>
+      </div>
+
+      <div style="margin-top:14px" class="questions">
+        <div class="question">
+          <div class="prompt">Dica rápida</div>
+          <div class="choices">
+            <div class="hint">Os resultados (e a pontuação total) serão exibidos na página de resultados.</div>
+            <div class="hint">Ao clicar em Iniciar Jogo você será levado para a página de perguntas.</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <script>
-    const enterBtn = document.getElementById('enterBtn');
-    const groupInput = document.getElementById('groupInput');
-    const loginMessage = document.getElementById('loginMessage');
-
-    enterBtn.addEventListener('click', () => {
-      const group = groupInput.value.trim().toLowerCase();
-
-      if (!group.match(/^grupo([1-9]|1[0-2])$/)) {
-        loginMessage.textContent = 'Usuário invalido.';
-        return;
-      }
-
-      // Salvar o grupo no localStorage para usar depois no game
-      localStorage.setItem('playerGroup', group);
-
-      // Redirecionar para o jogo
-      window.location.href = 'game.html';
-    });
-  </script>
+  <script src="../js/lobby_script.js" defer></script>
 </body>
 </html>
