@@ -165,6 +165,7 @@
       return { ok:false, reason:'no-results' };
     }
 
+    // INCIO DA PARTE QUE DEFINE O JSON!!! //
     const payload = {
       grupo: groupName,
       pontos: parsed && (typeof parsed.pontos === 'number' ? parsed.pontos : (typeof parsed.Pontos === 'number' ? parsed.Pontos : (typeof parsed.totalPoints === 'number' ? parsed.totalPoints : 0)))
@@ -174,6 +175,7 @@
 
     const id = normalizeId(groupName);
     const path = `${FOLDER}/${id}.json`;
+    // FIM DA PARTE QUE DEFINE O JSON!!! //
 
     sentStatusEl.textContent = 'Enviando...';
 

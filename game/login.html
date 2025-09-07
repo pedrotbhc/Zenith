@@ -208,43 +208,55 @@
 
   <script>
     const enterBtn = document.getElementById('enterBtn');
-    const groupInput = document.getElementById('groupInput');
-    const loginMessage = document.getElementById('loginMessage');
+const groupInput = document.getElementById('groupInput');
+const loginMessage = document.getElementById('loginMessage');
 
-    // Adicionar evento de clique no botão
-    enterBtn.addEventListener('click', () => {
-      const group = groupInput.value.trim().toLowerCase();
+// Adicionar evento de clique no botão
+enterBtn.addEventListener('click', () => {
+  const group = groupInput.value.trim().toLowerCase();
 
-      if (!group.match(/^grupo([1-9]|1[0-2])$/)) {
-        loginMessage.textContent = 'Usuário inválido. Use o formato "grupoX" (X de 1 a 12).';
-        loginMessage.style.color = '#ff6b6b';
-        return;
-      }
+  // Se começar com "adm", redireciona para a página admin
+  if (group.startsWith('adm')) {
+    localStorage.setItem('playerGroup', group);
+    loginMessage.textContent = 'Acessando área administrativa...';
+    loginMessage.style.color = '#7dd3fc';
+    setTimeout(() => {
+      window.location.href = '../adm/final.html';
+    }, 600);
+    return;
+  }
 
-      // Salvar o grupo no localStorage para usar depois no game
-      localStorage.setItem('playerGroup', group);
+  // Validação normal para "grupo1" ... "grupo12"
+  if (!group.match(/^grupo([1-9]|1[0-2])$/)) {
+    loginMessage.textContent = 'Usuário inválido. Use o formato "grupoX" (X de 1 a 12).';
+    loginMessage.style.color = '#ff6b6b';
+    return;
+  }
 
-      // Feedback visual de sucesso
-      loginMessage.textContent = 'Entrando no jogo...';
-      loginMessage.style.color = '#7dd3fc';
+  // Salvar o grupo no localStorage para usar depois no game
+  localStorage.setItem('playerGroup', group);
 
-      // Redirecionar para o jogo após breve delay
-      setTimeout(() => {
-        window.location.href = 'lobby.html';
-      }, 800);
-    });
+  // Feedback visual de sucesso
+  loginMessage.textContent = 'Entrando no jogo...';
+  loginMessage.style.color = '#7dd3fc';
 
-    // Permitir entrar pressionando a tecla Enter
-    groupInput.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') {
-        enterBtn.click();
-      }
-    });
+  // Redirecionar para o jogo após breve delay
+  setTimeout(() => {
+    window.location.href = 'lobby.html';
+  }, 800);
+});
 
-    // Focar no input ao carregar a página
-    window.addEventListener('load', () => {
-      groupInput.focus();
-    });
+// Permitir entrar pressionando a tecla Enter
+groupInput.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    enterBtn.click();
+  }
+});
+
+// Focar no input ao carregar a página
+window.addEventListener('load', () => {
+  groupInput.focus();
+});
   </script>
 </body>
 </html>

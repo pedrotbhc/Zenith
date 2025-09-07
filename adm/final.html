@@ -1,0 +1,597 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zenith — Pódio Final</title>
+  <style>
+    /* ===== Reset e estilos base ===== */
+    *,
+    *::before,
+    *::after { 
+      box-sizing: border-box; 
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: #0b1220;
+      color: #e6eef8;
+      font-family: 'Inter', system-ui, Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ===== Layout principal ===== */
+    body {
+      padding: 20px;
+      background: linear-gradient(135deg, #0b1220 0%, #1a2a6c 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .stage {
+      width: 100%;
+      max-width: 1200px;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 30px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    /* ===== Cabeçalho ===== */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo {
+      width: 62px;
+      height: 62px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #7dd3fc, #06b6d4);
+      color: #04233a;
+      font-weight: 800;
+      font-size: 22px;
+      box-shadow: 0 8px 22px rgba(6, 40, 60, 0.2);
+    }
+
+    .title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #7dd3fc;
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      color: #98a0b3;
+      font-size: 0.95rem;
+    }
+
+    /* ===== Controles ===== */
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn {
+      padding: 12px 18px;
+      border-radius: 10px;
+      border: 0;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn.primary {
+      background: #7dd3fc;
+      color: #04233a;
+      box-shadow: 0 4px 14px rgba(125, 211, 252, 0.4);
+    }
+
+    .btn.primary:hover {
+      background: #a3e0ff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(125, 211, 252, 0.5);
+    }
+
+    .btn.primary:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 8px rgba(125, 211, 252, 0.4);
+    }
+
+    .btn.ghost {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #e6eef8;
+    }
+
+    .btn.ghost:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(125, 211, 252, 0.3);
+    }
+
+    /* ===== Área do pódio ===== */
+    .podium-wrap {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 30px;
+      padding: 30px 0;
+      margin-bottom: 20px;
+    }
+
+    .podium-col {
+      width: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* Alturas dos degraus do pódio */
+    .col-1 { height: 340px; } /* Mais alto - 1º lugar */
+    .col-2 { height: 260px; } /* 2º lugar */
+    .col-3 { height: 220px; } /* 3º lugar */
+
+    .pedestal {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background: rgba(7, 20, 39, 0.4);
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      height: 100%;
+    }
+
+    .first .pedestal {
+      padding-top: 60px;
+      background: linear-gradient(135deg, rgba(125, 211, 252, 0.1), rgba(6, 182, 212, 0.1));
+      border-color: rgba(125, 211, 252, 0.2);
+    }
+
+    .rank-badge {
+      position: absolute;
+      top: -30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #7dd3fc, #06b6d4);
+      color: #04233a;
+      font-weight: 800;
+      font-size: 20px;
+      box-shadow: 0 8px 22px rgba(6, 40, 60, 0.2);
+      z-index: 10;
+    }
+
+    .first .rank-badge {
+      width: 84px;
+      height: 84px;
+      top: -40px;
+      font-size: 28px;
+      border-radius: 12px;
+      transform: rotate(-6deg);
+    }
+
+    .name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-top: 10px;
+      text-align: center;
+      color: #e6eef8;
+    }
+
+    .points {
+      color: #7dd3fc;
+      font-weight: 800;
+      font-size: 1.3rem;
+      margin-top: 8px;
+    }
+
+    .base {
+      width: 100%;
+      margin-top: 15px;
+      height: 60px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #98a0b3;
+      font-weight: 600;
+    }
+
+    /* ===== Lista de outros colocados ===== */
+    .other-list {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .other-title {
+      color: #98a0b3;
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+
+    .other-item {
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .other-item:last-child {
+      border-bottom: none;
+    }
+
+    .other-name {
+      font-weight: 500;
+      color: #e6eef8;
+    }
+
+    .other-points {
+      color: #98a0b3;
+    }
+
+    /* ===== Mensagens de status ===== */
+    .note {
+      color: #98a0b3;
+      font-size: 0.95rem;
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    .error {
+      color: #ff6b6b;
+      font-weight: 600;
+      text-align: center;
+      padding: 15px;
+      border-radius: 10px;
+      background: rgba(255, 107, 107, 0.1);
+      border: 1px solid rgba(255, 107, 107, 0.2);
+    }
+
+    .source-path {
+      color: #98a0b3;
+      font-size: 0.9rem;
+      text-align: center;
+      margin-top: 20px;
+      padding-top: 15px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* ===== Responsividade ===== */
+    @media (max-width: 1024px) {
+      .podium-wrap {
+        gap: 20px;
+      }
+      
+      .podium-col {
+        width: 28%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .stage {
+        padding: 20px;
+      }
+      
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+      }
+      
+      .controls {
+        width: 100%;
+        justify-content: center;
+      }
+      
+      .podium-wrap {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+      }
+      
+      .podium-col {
+        width: 80%;
+        height: auto !important;
+      }
+      
+      .rank-badge {
+        position: relative;
+        top: 0;
+        margin-bottom: 15px;
+        transform: none !important;
+      }
+      
+      .first .rank-badge {
+        margin-bottom: 20px;
+      }
+      
+      .pedestal {
+        height: auto;
+        padding: 20px;
+      }
+      
+      .first .pedestal {
+        padding-top: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .stage {
+        padding: 15px;
+      }
+      
+      .logo {
+        width: 54px;
+        height: 54px;
+        font-size: 20px;
+      }
+      
+      .title {
+        font-size: 1.4rem;
+      }
+      
+      .podium-col {
+        width: 100%;
+      }
+      
+      .controls {
+        flex-direction: column;
+      }
+      
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="stage" role="main" aria-live="polite">
+    <header class="header">
+      <div class="brand">
+        <div class="logo">Z</div>
+        <div>
+          <div class="title">Zenith — Resultado Final</div>
+          <div class="subtitle">Pódio das equipes (1º, 2º, 3º)</div>
+        </div>
+      </div>
+
+      <div class="controls" aria-hidden="false">
+        <button id="refreshBtn" class="btn ghost">Atualizar</button>
+        <button id="openJsonBtn" class="btn ghost">Abrir JSON</button>
+        <button id="backBtn" class="btn primary">Voltar ao Lobby</button>
+      </div>
+    </header>
+
+    <main>
+      <div id="loading" class="note">Carregando resultados do bucket…</div>
+      <div id="error" class="error" style="display:none"></div>
+
+      <section id="podium" class="podium-wrap" style="display:none" aria-label="Pódio">
+        <!-- 2º lugar -->
+        <div class="podium-col col-2" id="col2">
+          <div class="rank-badge">2</div>
+          <div class="pedestal">
+            <div class="name" id="name2">—</div>
+            <div class="points" id="points2">0 pts</div>
+            <div class="base">2º Lugar</div>
+          </div>
+        </div>
+
+        <!-- 1º lugar -->
+        <div class="podium-col col-1 first" id="col1">
+          <div class="rank-badge">1</div>
+          <div class="pedestal">
+            <div class="name" id="name1">—</div>
+            <div class="points" id="points1">0 pts</div>
+            <div class="base">1º Lugar</div>
+          </div>
+        </div>
+
+        <!-- 3º lugar -->
+        <div class="podium-col col-3" id="col3">
+          <div class="rank-badge">3</div>
+          <div class="pedestal">
+            <div class="name" id="name3">—</div>
+            <div class="points" id="points3">0 pts</div>
+            <div class="base">3º Lugar</div>
+          </div>
+        </div>
+      </section>
+
+      <div id="otherList" class="other-list" style="display:none">
+        <div class="other-title">Outros colocados:</div>
+        <div id="others"></div>
+      </div>
+    </main>
+
+    <div class="source-path">
+      Dados lidos de: <span id="sourcePath">data/adm/resultado_final.json</span>
+    </div>
+  </div>
+
+  <!-- Supabase UMD -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+
+  <script>
+  (function(){
+    'use strict';
+
+    // CONFIG: substitua pela sua instância (você já forneceu antes)
+    const SUPABASE_URL = "https://towutdmdlxyzbecfpunk.supabase.co";
+    const SERVICE_ROLE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRvd3V0ZG1kbHh5emJlY2ZwdW5rIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1NjY1NzUyMSwiZXhwIjoyMDcyMjMzNTIxfQ.n_yZc7G-UW5sA35Y04ZQG-X_PYqdAJ8psH5UICGAjEg";
+
+    const BUCKET = 'data';
+    const PATH = 'adm/resultado_final.json';
+
+    // DOM refs
+    const refreshBtn = document.getElementById('refreshBtn');
+    const openJsonBtn = document.getElementById('openJsonBtn');
+    const backBtn = document.getElementById('backBtn');
+    const loadingEl = document.getElementById('loading');
+    const errorEl = document.getElementById('error');
+    const podiumEl = document.getElementById('podium');
+    const otherListEl = document.getElementById('otherList');
+    const othersEl = document.getElementById('others');
+    const sourcePathEl = document.getElementById('sourcePath');
+
+    // name/points elems
+    const name1 = document.getElementById('name1'), points1 = document.getElementById('points1');
+    const name2 = document.getElementById('name2'), points2 = document.getElementById('points2');
+    const name3 = document.getElementById('name3'), points3 = document.getElementById('points3');
+
+    // ensure supabase lib is loaded
+    if(typeof supabase === 'undefined' || !supabase.createClient){
+      loadingEl.style.display = 'none';
+      errorEl.style.display = 'block';
+      errorEl.textContent = 'Erro: biblioteca Supabase não encontrada.';
+      console.error('Supabase UMD não carregado.');
+      throw new Error('Supabase UMD não carregado.');
+    }
+
+    // create client (note: service role in frontend is insecure; você já forneceu a chave)
+    const client = supabase.createClient(SUPABASE_URL, SERVICE_ROLE_KEY, { auth: { persistSession: false } });
+
+    async function fetchResultados(){
+      loadingEl.style.display = 'block';
+      errorEl.style.display = 'none';
+      podiumEl.style.display = 'none';
+      otherListEl.style.display = 'none';
+      loadingEl.textContent = 'Carregando resultados do bucket…';
+      try {
+        // baixa o arquivo
+        const { data, error } = await client.storage.from(BUCKET).download(PATH);
+        if(error){
+          throw error;
+        }
+        // data é um Blob/Stream
+        const text = await data.text();
+        let parsed = null;
+        try { parsed = JSON.parse(text); }
+        catch(parseErr){
+          throw new Error('Arquivo JSON inválido: ' + (parseErr && parseErr.message));
+        }
+
+        // valida formato esperado
+        if(!parsed || !Array.isArray(parsed.grupos)){
+          throw new Error('Formato inválido: objeto sem "grupos" (array).');
+        }
+
+        renderPodium(parsed.grupos);
+        loadingEl.style.display = 'none';
+        podiumEl.style.display = 'flex';
+        sourcePathEl.textContent = `${BUCKET}/${PATH}`;
+      } catch(err){
+        console.error('fetchResultados error', err);
+        loadingEl.style.display = 'none';
+        errorEl.style.display = 'block';
+        errorEl.textContent = 'Falha ao carregar resultados — veja console.';
+        // mostrar mensagem mais detalhada no console; usuário dev pode querer ver
+      }
+    }
+
+    function renderPodium(grupos){
+      // grupos ordered desc (index 0 = 1st)
+      const g1 = grupos[0] || { grupo:'—', pontos:0 };
+      const g2 = grupos[1] || { grupo:'—', pontos:0 };
+      const g3 = grupos[2] || { grupo:'—', pontos:0 };
+
+      name1.textContent = g1.grupo || '—';
+      points1.textContent = String(g1.pontos || 0) + ' pts';
+
+      name2.textContent = g2.grupo || '—';
+      points2.textContent = String(g2.pontos || 0) + ' pts';
+
+      name3.textContent = g3.grupo || '—';
+      points3.textContent = String(g3.pontos || 0) + ' pts';
+
+      // others list
+      const others = grupos.slice(3);
+      if(others.length){
+        otherListEl.style.display = 'block';
+        othersEl.innerHTML = others.map((o, idx) => {
+          const pos = idx + 4; // 4º em diante
+          return `<div class="other-item">
+                    <span class="other-name">${pos}º — ${escapeHtml(String(o.grupo||'—'))}</span>
+                    <span class="other-points">${Number(o.pontos||0)} pts</span>
+                  </div>`;
+        }).join('');
+      } else {
+        otherListEl.style.display = 'none';
+      }
+    }
+
+    function escapeHtml(s){
+      return s.replace(/[&<>"']/g, (m) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+    }
+
+    // open raw JSON in new tab
+    async function openJson(){
+      try {
+        const { data, error } = await client.storage.from(BUCKET).download(PATH);
+        if(error) throw error;
+        const text = await data.text();
+        const blob = new Blob([text], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        window.open(url, '_blank');
+        // release after a little while
+        setTimeout(()=> URL.revokeObjectURL(url), 5000);
+      } catch(err){
+        console.error('openJson error', err);
+        showError('Falha ao abrir JSON (veja console)');
+      }
+    }
+
+    function showError(msg){
+      errorEl.style.display = 'block';
+      errorEl.textContent = msg;
+    }
+
+    // handlers
+    refreshBtn.addEventListener('click', fetchResultados);
+    openJsonBtn.addEventListener('click', openJson);
+    backBtn.addEventListener('click', () => {
+      // voltar ao lobby (ajuste o caminho conforme sua estrutura)
+      window.location.href = 'lobby.html';
+    });
+
+    // inicializa
+    fetchResultados();
+
+  })();
+  </script>
+</body>
+</html>
