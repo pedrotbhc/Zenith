@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Zenith — Resultados</title>
+  <style>
+    /* ===== Reset e estilos base ===== */
+    *,
+    *::before,
+    *::after { 
+      box-sizing: border-box; 
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: #0b1220;
+      color: #e6eef8;
+      font-family: 'Inter', system-ui, Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ===== Layout principal ===== */
+    body {
+      padding: 20px;
+      background: linear-gradient(135deg, #0b1220 0%, #1a2a6c 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .app {
+      width: 100%;
+      max-width: 920px;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 25px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    /* ===== Cabeçalho ===== */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #7dd3fc, #06b6d4);
+      color: #04233a;
+      font-weight: 800;
+      font-size: 20px;
+      box-shadow: 0 8px 22px rgba(6, 40, 60, 0.2);
+    }
+
+    .title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #7dd3fc;
+    }
+
+    .right {
+      text-align: right;
+    }
+
+    .muted {
+      color: #98a0b3;
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+    }
+
+    .big-score {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #7dd3fc;
+      margin-top: 2px;
+    }
+
+    /* ===== Painel principal ===== */
+    .panel {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .group-info {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .group-name {
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .edit-group {
+      display: none;
+      gap: 10px;
+      align-items: center;
+      margin-top: 8px;
+    }
+
+    input[type="text"] {
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(7, 20, 39, 0.6);
+      color: #e6eef8;
+      font-family: inherit;
+      min-width: 200px;
+    }
+
+    input[type="text"]:focus {
+      outline: none;
+      border-color: rgba(125, 211, 252, 0.4);
+      box-shadow: 0 0 0 3px rgba(125, 211, 252, 0.1);
+    }
+
+    .status-info {
+      min-width: 220px;
+      text-align: right;
+    }
+
+    .sent-status {
+      font-weight: 500;
+      color: #98a0b3;
+    }
+
+    /* ===== Controles ===== */
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 15px 0;
+    }
+
+    .btn {
+      padding: 12px 18px;
+      border-radius: 10px;
+      border: 0;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn.primary {
+      background: #7dd3fc;
+      color: #04233a;
+      box-shadow: 0 4px 14px rgba(125, 211, 252, 0.4);
+    }
+
+    .btn.primary:hover {
+      background: #a3e0ff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(125, 211, 252, 0.5);
+    }
+
+    .btn.primary:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 8px rgba(125, 211, 252, 0.4);
+    }
+
+    .btn.ghost {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #e6eef8;
+    }
+
+    .btn.ghost:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(125, 211, 252, 0.3);
+    }
+
+    /* ===== Cartões de estágio ===== */
+    #stagesContainer {
+      display: grid;
+      gap: 15px;
+    }
+
+    .stage-card {
+      border-radius: 10px;
+      padding: 18px;
+      background: rgba(7, 20, 39, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .stage-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .stage-title {
+      font-weight: 600;
+      color: #7dd3fc;
+    }
+
+    .stage-score {
+      font-weight: 700;
+      color: #e6eef8;
+    }
+
+    /* ===== Linhas de pergunta ===== */
+    .qline {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 12px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .qline:first-of-type {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .q-prompt {
+      flex: 1;
+      margin-right: 10px;
+      color: #e6eef8;
+    }
+
+    .q-meta {
+      color: #98a0b3;
+      min-width: 160px;
+      text-align: right;
+      font-size: 0.95rem;
+    }
+
+    .ok {
+      color: #7dd3fc;
+      font-weight: 700;
+    }
+
+    .bad {
+      color: #ff6b6b;
+      font-weight: 700;
+    }
+
+    /* ===== Toast de status ===== */
+    #statusToast {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: rgba(3, 9, 20, 0.95);
+      color: #fff;
+      padding: 12px 16px;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      display: none;
+      z-index: 1000;
+      max-width: 300px;
+    }
+
+    /* ===== Responsividade ===== */
+    @media (max-width: 768px) {
+      .app {
+        padding: 20px;
+      }
+      
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+      }
+      
+      .right {
+        text-align: left;
+        width: 100%;
+      }
+      
+      .panel-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+      }
+      
+      .status-info {
+        text-align: left;
+        width: 100%;
+      }
+      
+      .qline {
+        flex-direction: column;
+        gap: 5px;
+      }
+      
+      .q-meta {
+        text-align: left;
+        min-width: auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .app {
+        padding: 15px;
+      }
+      
+      .logo {
+        width: 48px;
+        height: 48px;
+        font-size: 18px;
+      }
+      
+      .title {
+        font-size: 1.2rem;
+      }
+      
+      .big-score {
+        font-size: 1.5rem;
+      }
+      
+      input[type="text"] {
+        min-width: auto;
+        width: 100%;
+      }
+      
+      .edit-group {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="app" role="main" aria-live="polite">
+    <header class="header">
+      <div class="brand">
+        <div class="logo">Z</div>
+        <div class="title">Zenith</div>
+      </div>
+      <div class="right">
+        <div class="muted">Pontuação total</div>
+        <div id="totalPoints" class="big-score">0</div>
+        <div id="groupNameSmall" class="muted" style="margin-top:6px"></div>
+      </div>
+    </header>
+
+    <section class="panel">
+      <div class="panel-header">
+        <div class="group-info">
+          <div class="muted">Grupo</div>
+          <div style="display:flex;gap:8px;align-items:center">
+            <div id="groupName" class="group-name">—</div>
+            <div id="editGroup" class="edit-group">
+              <input id="groupInput" type="text" placeholder="Nome do grupo"/>
+              <button id="saveGroupBtn" class="btn primary">Salvar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="status-info">
+          <div class="muted">Status do envio</div>
+          <div id="sentStatus" class="sent-status">Aguardando...</div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="resendBtn" class="btn primary">Erro no envio? Clique aqui.</button>
+      </div>
+
+      <div id="stagesContainer" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <div id="statusToast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/result_script.js"></script>
+</body>
+</html>

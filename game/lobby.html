@@ -4,10 +4,246 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Jogo de Perguntas — Lobby</title>
-  <link rel="stylesheet" href="../css/lobby_style.css">
+  <style>
+    /* ===== Reset e estilos base ===== */
+    *,
+    *::before,
+    *::after { 
+      box-sizing: border-box; 
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: #0b1220;
+      color: #e6eef8;
+      font-family: 'Inter', system-ui, Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ===== Layout principal ===== */
+    body {
+      padding: 20px;
+      background: linear-gradient(135deg, #0b1220 0%, #1a2a6c 100%);
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* ===== Abas ===== */
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      padding: 12px 20px;
+      border-radius: 10px;
+      background: rgba(7, 20, 39, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      cursor: pointer;
+      white-space: nowrap;
+      color: #98a0b3;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .tab.active {
+      background: rgba(125, 211, 252, 0.15);
+      color: #7dd3fc;
+      border-color: rgba(125, 211, 252, 0.3);
+      box-shadow: 0 0 15px rgba(125, 211, 252, 0.2);
+    }
+
+    /* ===== Painel ===== */
+    .panel {
+      width: 100%;
+      max-width: 800px;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 25px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    .panel h2 {
+      color: #7dd3fc;
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+      text-shadow: 0 2px 10px rgba(125, 211, 252, 0.3);
+    }
+
+    .panel p {
+      color: #e6eef8;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .panel strong {
+      color: #7dd3fc;
+    }
+
+    /* ===== Controles ===== */
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      padding: 14px 22px;
+      border-radius: 10px;
+      border: 0;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn.primary {
+      background: #7dd3fc;
+      color: #04233a;
+      box-shadow: 0 4px 14px rgba(125, 211, 252, 0.4);
+    }
+
+    .btn.primary:hover {
+      background: #a3e0ff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(125, 211, 252, 0.5);
+    }
+
+    .btn.primary:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 8px rgba(125, 211, 252, 0.4);
+    }
+
+    .btn.ghost {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #e6eef8;
+    }
+
+    .btn.ghost:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(125, 211, 252, 0.3);
+    }
+
+    /* ===== Status ===== */
+    .status {
+      margin-left: 8px;
+      color: #98a0b3;
+      font-size: 0.95rem;
+      padding: 10px 15px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* ===== Área de dicas ===== */
+    .questions {
+      display: grid;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .question {
+      padding: 18px;
+      border-radius: 12px;
+      background: rgba(7, 20, 39, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .prompt {
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #7dd3fc;
+      font-size: 1.1rem;
+    }
+
+    .choices {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .hint {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 8px;
+      padding: 12px 15px;
+      color: #98a0b3;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      line-height: 1.5;
+    }
+
+    /* ===== Decoração adicional ===== */
+    .evolution-icon {
+      text-align: center;
+      margin-bottom: 20px;
+      opacity: 0.8;
+    }
+
+    .evolution-icon svg {
+      width: 60px;
+      height: 60px;
+      fill: #7dd3fc;
+    }
+
+    /* ===== Responsividade ===== */
+    @media (max-width: 768px) {
+      .container {
+        padding: 15px;
+      }
+      
+      .panel {
+        padding: 20px;
+      }
+      
+      .controls {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      .btn {
+        width: 100%;
+      }
+      
+      .status {
+        margin-left: 0;
+        margin-top: 10px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .tabs {
+        justify-content: center;
+      }
+      
+      .panel h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="container">
+    <div class="evolution-icon">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12,22C6.5,22 2,17.5 2,12C2,6.5 6.5,2 12,2C17.5,2 22,6.5 22,12C22,17.5 17.5,22 12,22M12,4C7.6,4 4,7.6 4,12C4,16.4 7.6,20 12,20C16.4,20 20,16.4 20,12C20,7.6 16.4,4 12,4M12,9C13.7,9 15,10.3 15,12C15,13.7 13.7,15 12,15C10.3,15 9,13.7 9,12C9,10.3 10.3,9 12,9M12,10.5C11.2,10.5 10.5,11.2 10.5,12C10.5,12.8 11.2,13.5 12,13.5C12.8,13.5 13.5,12.8 13.5,12C13.5,11.2 12.8,10.5 12,10.5Z"/>
+      </svg>
+    </div>
+    
     <div class="tabs">
       <div class="tab active">Lobby</div>
     </div>
@@ -18,11 +254,10 @@
 
       <div class="controls">
         <button class="btn primary" id="startGameBtn">Iniciar Jogo</button>
-        <button class="btn ghost" id="resetBtn">Resetar</button>
         <div class="status" id="lobbyStatus">Pronto</div>
       </div>
 
-      <div style="margin-top:14px" class="questions">
+      <div class="questions">
         <div class="question">
           <div class="prompt">Dica rápida</div>
           <div class="choices">
@@ -34,6 +269,29 @@
     </div>
   </div>
 
-  <script src="../js/lobby_script.js" defer></script>
+  <script>
+    // Script básico para funcionalidade dos botões
+    document.addEventListener('DOMContentLoaded', function() {
+      const startGameBtn = document.getElementById('startGameBtn');
+      const lobbyStatus = document.getElementById('lobbyStatus');
+      
+      // Verificar se o grupo foi definido
+      const playerGroup = localStorage.getItem('playerGroup');
+      if (playerGroup) {
+        lobbyStatus.textContent = `Conectado como: ${playerGroup}`;
+      }
+      
+      // Botão iniciar jogo
+      startGameBtn.addEventListener('click', function() {
+        lobbyStatus.textContent = 'Iniciando jogo...';
+        lobbyStatus.style.color = '#7dd3fc';
+        
+        // Simular redirecionamento após breve delay
+        setTimeout(function() {
+          window.location.href = 'questions.html'; // Altere para a página correta do jogo
+        }, 1000);
+      });
+    });
+  </script>
 </body>
 </html>

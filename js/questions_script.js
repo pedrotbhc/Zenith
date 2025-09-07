@@ -262,7 +262,7 @@
     catch(e){ console.warn('save fail', e); }
 
     // redireciona para result_json.html
-    window.location.href = 'result_json.html';
+    window.location.href = 'result.html';
   }
 
   // Init

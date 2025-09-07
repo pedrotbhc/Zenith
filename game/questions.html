@@ -1,147 +1,291 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Zenith — Perguntas</title>
-<style>
-/* ===== base / reset ===== */
-* { box-sizing: border-box; }
-html,body { height:100%; }
-body {
-  margin:0;
-  font-family: Inter, system-ui, Arial, sans-serif;
-  background: linear-gradient(180deg,#071020 0%, #0b1220 100%);
-  color:#e6eef8;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  display:flex;
-  justify-content:center;
-  padding:20px;
-}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Zenith — Perguntas</title>
+  <style>
+    /* ===== Reset e estilos base ===== */
+    *,
+    *::before,
+    *::after { 
+      box-sizing: border-box; 
+    }
 
-/* ===== container ===== */
-.app {
-  width:100%;
-  max-width:760px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  border: 1px solid rgba(255,255,255,0.03);
-  border-radius:14px;
-  padding:18px;
-  box-shadow: 0 12px 40px rgba(2,6,23,0.6);
-  overflow:hidden;
-}
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: #0b1220;
+      color: #e6eef8;
+      font-family: 'Inter', system-ui, Arial, sans-serif;
+      overflow-x: hidden;
+    }
 
-/* ===== header (Zenith) ===== */
-.header {
-  display:flex;
-  gap:12px;
-  align-items:center;
-  justify-content:space-between;
-  margin-bottom:14px;
-}
-.brand {
-  display:flex;
-  gap:12px;
-  align-items:center;
-}
-.logo {
-  width:52px;height:52px;border-radius:10px;
-  display:flex;align-items:center;justify-content:center;
-  background:linear-gradient(135deg,#7dd3fc,#06b6d4);
-  color:#04233a;font-weight:800;font-size:18px;
-  box-shadow: 0 8px 22px rgba(6,40,60,0.15);
-}
-.title {
-  font-size:1.25rem;
-  font-weight:800;
-  letter-spacing:0.2px;
-}
-.subtitle {
-  color:#98a0b3;
-  font-size:0.9rem;
-  margin-top:2px;
-}
+    /* ===== Layout principal ===== */
+    body {
+      padding: 20px;
+      background: linear-gradient(135deg, #0b1220 0%, #1a2a6c 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
 
-/* ===== header right (timer) ===== */
-.header-right {
-  text-align:right;
-  min-width:110px;
-}
-.timer-label { font-size:0.75rem; color:#98a0b3; }
-.timer-value { font-weight:800; font-size:1.05rem; margin-top:4px; }
+    .app {
+      width: 100%;
+      max-width: 760px;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 25px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+    }
 
-/* ===== panel (game area) ===== */
-.panel {
-  display:block;
-  width:100%;
-  margin-top:6px;
-}
-.stage-info {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:12px;
-  margin-bottom:12px;
-}
-.stage-title { font-weight:700; font-size:1.05rem; }
-.stage-sub { color:#98a0b3; font-size:0.9rem; }
+    /* ===== Cabeçalho ===== */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
 
-/* ===== intermission banner ===== */
-#intermissionBanner {
-  display:none;
-  margin-bottom:12px;
-  padding:10px;
-  border-radius:10px;
-  background: linear-gradient(180deg, rgba(125,211,252,0.03), rgba(6,166,178,0.02));
-  border: 1px solid rgba(125,211,252,0.06);
-  color:#cdf7ff;
-}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
 
-/* ===== questions list ===== */
-#questionsContainer { display:block; margin-top:6px; }
-.question-card {
-  background: rgba(255,255,255,0.01);
-  border: 1px solid rgba(255,255,255,0.02);
-  border-radius:10px;
-  padding:12px;
-  margin-bottom:12px;
-}
-.prompt { font-weight:700; margin-bottom:10px; font-size:1rem; }
-.choices { display:grid; gap:8px; }
-.choice-btn {
-  display:block;
-  width:100%;
-  text-align:left;
-  padding:10px 12px;
-  border-radius:8px;
-  border:1px solid rgba(255,255,255,0.03);
-  background: linear-gradient(180deg, rgba(255,255,255,0.006), rgba(255,255,255,0.003));
-  color:inherit;
-  cursor:pointer;
-  transition: transform .08s, box-shadow .12s, background .12s;
-  font-weight:700;
-}
-.choice-btn:active { transform:translateY(1px); }
-.choice-btn:hover { box-shadow: 0 10px 24px rgba(3,9,20,0.35); }
+    .logo {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #7dd3fc, #06b6d4);
+      color: #04233a;
+      font-weight: 800;
+      font-size: 20px;
+      box-shadow: 0 8px 22px rgba(6, 40, 60, 0.2);
+    }
 
-/* state after answered (simple visual) */
-.choice-btn.answered { opacity:0.6; pointer-events:none; }
-.choice-btn.correct { outline: 2px solid rgba(125,211,252,0.14); background: rgba(125,211,252,0.03); color: #7dd3fc; }
-.choice-btn.wrong { opacity:0.6; background: rgba(255,107,107,0.03); color:#ff9b9b; }
+    .title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #7dd3fc;
+      margin-bottom: 4px;
+    }
 
-/* footer small info */
-.footer-note { color:#98a0b3; font-size:0.9rem; margin-top:10px; }
+    .subtitle {
+      color: #98a0b3;
+      font-size: 0.9rem;
+    }
 
-/* responsive */
-@media (max-width:520px){
-  .header { flex-direction:column; align-items:flex-start; gap:8px; }
-  .header-right { text-align:left; width:100%; display:flex; justify-content:space-between; align-items:center; }
-  .logo { width:46px;height:46px;font-size:16px; }
-  .timer-value { font-size:1rem; }
-  .app { padding:14px; border-radius:12px; }
-}
-</style>
+    .header-right {
+      text-align: right;
+    }
+
+    .timer-label {
+      font-size: 0.8rem;
+      color: #98a0b3;
+      margin-bottom: 4px;
+    }
+
+    .timer-value {
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #7dd3fc;
+      background: rgba(125, 211, 252, 0.1);
+      padding: 8px 12px;
+      border-radius: 10px;
+      min-width: 80px;
+      display: inline-block;
+      text-align: center;
+    }
+
+    /* ===== Painel principal ===== */
+    .panel {
+      width: 100%;
+    }
+
+    .stage-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .stage-title {
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: #7dd3fc;
+      margin-bottom: 5px;
+    }
+
+    .stage-sub {
+      color: #98a0b3;
+      font-size: 0.9rem;
+    }
+
+    /* ===== Banner de intervalo ===== */
+    #intermissionBanner {
+      display: none;
+      margin-bottom: 20px;
+      padding: 15px;
+      border-radius: 12px;
+      background: rgba(125, 211, 252, 0.1);
+      border: 1px solid rgba(125, 211, 252, 0.2);
+      text-align: center;
+      color: #7dd3fc;
+      font-weight: 500;
+    }
+
+    #intermissionBanner strong {
+      color: #e6eef8;
+      font-weight: 700;
+    }
+
+    /* ===== Área de perguntas ===== */
+    #questionsContainer {
+      display: block;
+      margin-top: 10px;
+    }
+
+    .question-card {
+      padding: 18px;
+      border-radius: 12px;
+      background: rgba(7, 20, 39, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      margin-bottom: 15px;
+    }
+
+    .prompt {
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #e6eef8;
+      font-size: 1.1rem;
+      line-height: 1.4;
+    }
+
+    .choices {
+      display: grid;
+      gap: 10px;
+    }
+
+    .choice-btn {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.03);
+      color: #e6eef8;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-weight: 500;
+    }
+
+    .choice-btn:hover {
+      background: rgba(125, 211, 252, 0.1);
+      border-color: rgba(125, 211, 252, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .choice-btn:active {
+      transform: translateY(0);
+    }
+
+    /* Estados das respostas */
+    .choice-btn.answered {
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .choice-btn.correct {
+      background: rgba(125, 211, 252, 0.15);
+      border-color: rgba(125, 211, 252, 0.4);
+      color: #7dd3fc;
+    }
+
+    .choice-btn.wrong {
+      background: rgba(255, 107, 107, 0.1);
+      border-color: rgba(255, 107, 107, 0.3);
+      color: #ff6b6b;
+    }
+
+    /* ===== Rodapé ===== */
+    .footer-note {
+      color: #98a0b3;
+      font-size: 0.9rem;
+      margin-top: 20px;
+      padding-top: 15px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      text-align: center;
+    }
+
+    /* ===== Responsividade ===== */
+    @media (max-width: 768px) {
+      .app {
+        padding: 20px;
+      }
+      
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+      }
+      
+      .header-right {
+        text-align: left;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .stage-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .app {
+        padding: 15px;
+      }
+      
+      .logo {
+        width: 46px;
+        height: 46px;
+        font-size: 18px;
+      }
+      
+      .title {
+        font-size: 1.2rem;
+      }
+      
+      .timer-value {
+        font-size: 1.1rem;
+        padding: 6px 10px;
+      }
+    }
+
+    /* Animações */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    .pulse {
+      animation: pulse 1s infinite;
+    }
+  </style>
 </head>
 <body>
   <main class="app" role="main" aria-live="polite">
@@ -153,7 +297,7 @@ body {
           <div class="subtitle">Evolução · Conhecimento · Ritmo</div>
         </div>
       </div>
-      <div class="header-right" aria-hidden="false">
+      <div class="header-right">
         <div class="timer-label">Tempo do estágio</div>
         <div id="timerDisplay" class="timer-value">00:00</div>
       </div>
@@ -165,17 +309,19 @@ body {
           <div id="stageTitle" class="stage-title">Preparando...</div>
           <div id="stageSubtitle" class="stage-sub">Carregando perguntas…</div>
         </div>
-        <div id="stageProgress" class="stage-sub" aria-hidden="true">Estágio —</div>
+        <div id="stageProgress" class="stage-sub">Estágio —</div>
       </div>
 
       <div id="intermissionBanner" role="status">Intervalo — próximo estágio em <strong id="intermissionTimer">5</strong>s</div>
 
-      <div id="questionsContainer" aria-live="polite"></div>
+      <div id="questionsContainer" aria-live="polite">
+        <!-- As perguntas serão inseridas aqui via JavaScript -->
+      </div>
 
       <div class="footer-note">As fases duram 20 segundos. Pontos por pergunta decaem conforme o tempo restante do estágio.</div>
     </section>
   </main>
 
-<script src="../js/questions_script.js"></script>
+  <script src="../js/questions_script.js"></script>
 </body>
 </html>

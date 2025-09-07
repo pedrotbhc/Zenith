@@ -4,16 +4,205 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Login - Evolution Of Life</title>
-  <link rel="stylesheet" href="../css/login_style.css"> <!-- seu CSS já existente -->
+  <style>
+    /* ===== Reset e estilos base ===== */
+    *,
+    *::before,
+    *::after { 
+      box-sizing: border-box; 
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: #0b1220;
+      color: #e6eef8;
+      font-family: 'Inter', system-ui, Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ===== Layout principal ===== */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      background: linear-gradient(135deg, #0b1220 0%, #1a2a6c 100%);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 450px;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 30px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    h1 {
+      color: #7dd3fc;
+      margin-bottom: 25px;
+      font-size: 2.2rem;
+      text-shadow: 0 2px 10px rgba(125, 211, 252, 0.3);
+    }
+
+    /* ===== Controles e inputs ===== */
+    .controls {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 25px;
+    }
+
+    #groupInput {
+      flex: 1;
+      padding: 14px 18px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(7, 20, 39, 0.6);
+      color: #e6eef8;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    #groupInput:focus {
+      outline: none;
+      border-color: rgba(125, 211, 252, 0.4);
+      box-shadow: 0 0 0 3px rgba(125, 211, 252, 0.1);
+    }
+
+    #groupInput::placeholder {
+      color: #98a0b3;
+    }
+
+    /* ===== Botões ===== */
+    .btn {
+      padding: 14px 22px;
+      border-radius: 10px;
+      border: 0;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn.primary {
+      background: #7dd3fc;
+      color: #04233a;
+      box-shadow: 0 4px 14px rgba(125, 211, 252, 0.4);
+    }
+
+    .btn.primary:hover {
+      background: #a3e0ff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(125, 211, 252, 0.5);
+    }
+
+    .btn.primary:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 8px rgba(125, 211, 252, 0.4);
+    }
+
+    /* ===== Texto de termos ===== */
+    .terms-text {
+      margin: 20px 0;
+      color: #98a0b3;
+      font-size: 0.95rem;
+    }
+
+    .terms-link {
+      color: #7dd3fc;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 0;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .terms-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: #7dd3fc;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+
+    .terms-link:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .terms-link:hover {
+      color: #a3e0ff;
+    }
+
+    /* ===== Mensagem de status ===== */
+    .status {
+      margin-top: 20px;
+      padding: 12px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      color: #e6eef8;
+      font-size: 0.95rem;
+    }
+
+    /* ===== Responsividade ===== */
+    @media (max-width: 520px) {
+      .container {
+        padding: 25px 20px;
+      }
+      
+      .controls {
+        flex-direction: column;
+      }
+      
+      h1 {
+        font-size: 1.8rem;
+      }
+      
+      .btn {
+        width: 100%;
+      }
+    }
+
+    /* ===== Decoração adicional ===== */
+    .evolution-icon {
+      margin-bottom: 15px;
+      opacity: 0.8;
+    }
+
+    .evolution-icon svg {
+      width: 60px;
+      height: 60px;
+      fill: #7dd3fc;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
+    <div class="evolution-icon">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12,22C6.5,22 2,17.5 2,12C2,6.5 6.5,2 12,2C17.5,2 22,6.5 22,12C22,17.5 17.5,22 12,22M12,4C7.6,4 4,7.6 4,12C4,16.4 7.6,20 12,20C16.4,20 20,16.4 20,12C20,7.6 16.4,4 12,4M12,9C13.7,9 15,10.3 15,12C15,13.7 13.7,15 12,15C10.3,15 9,13.7 9,12C9,10.3 10.3,9 12,9M12,10.5C11.2,10.5 10.5,11.2 10.5,12C10.5,12.8 11.2,13.5 12,13.5C12.8,13.5 13.5,12.8 13.5,12C13.5,11.2 12.8,10.5 12,10.5Z"/>
+      </svg>
+    </div>
+    
     <h1>Entrar no grupo</h1>
+    
     <div class="controls">
-      <input type="text" id="groupInput" placeholder="Digite o usuário..." class="btn ghost" style="flex:1">
+      <input type="text" id="groupInput" placeholder="Digite o usuário..." class="btn ghost">
       <button id="enterBtn" class="btn primary">Entrar</button>
     </div>
-    <p>Ao seguir, voce concorda com os <link href="../assets/legal/termos.md"> termos</link></p>
+    
+    <p class="terms-text">Ao seguir, você concorda com os <a href="../assets/legal/termos.html" class="terms-link">termos e condições</a></p>
+    
     <div id="loginMessage" class="status"></div>
   </div>
 
@@ -22,19 +211,39 @@
     const groupInput = document.getElementById('groupInput');
     const loginMessage = document.getElementById('loginMessage');
 
+    // Adicionar evento de clique no botão
     enterBtn.addEventListener('click', () => {
       const group = groupInput.value.trim().toLowerCase();
 
       if (!group.match(/^grupo([1-9]|1[0-2])$/)) {
-        loginMessage.textContent = 'Usuário invalido.';
+        loginMessage.textContent = 'Usuário inválido. Use o formato "grupoX" (X de 1 a 12).';
+        loginMessage.style.color = '#ff6b6b';
         return;
       }
 
       // Salvar o grupo no localStorage para usar depois no game
       localStorage.setItem('playerGroup', group);
 
-      // Redirecionar para o jogo
-      window.location.href = 'lobby.html';
+      // Feedback visual de sucesso
+      loginMessage.textContent = 'Entrando no jogo...';
+      loginMessage.style.color = '#7dd3fc';
+
+      // Redirecionar para o jogo após breve delay
+      setTimeout(() => {
+        window.location.href = 'lobby.html';
+      }, 800);
+    });
+
+    // Permitir entrar pressionando a tecla Enter
+    groupInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        enterBtn.click();
+      }
+    });
+
+    // Focar no input ao carregar a página
+    window.addEventListener('load', () => {
+      groupInput.focus();
     });
   </script>
 </body>
