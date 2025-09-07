@@ -8,8 +8,8 @@
   };
   const STAGES = ['easy','medium','hard'];
   const STAGE_LABEL = { easy: 'Fácil', medium: 'Médio', hard: 'Difícil' };
-  const STAGE_DURATION = 2; // segundos por estágio
-  const INTERVAL_DURATION = 1; // segundos entre estágios
+  const STAGE_DURATION = 60; // segundos por estágio
+  const INTERVAL_DURATION = 10; // segundos entre estágios
   const BASE_POINTS = { easy:100, medium:200, hard:300 };
 
   // state
