@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenith</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0b1220 0%, #1a2a6c 100%);
+            color: #e6eef8;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .zenith {
+            font-size: 120px;
+            font-weight: 900;
+            color: #7dd3fc;
+            text-shadow: 0 5px 25px rgba(125, 211, 252, 0.4);
+            letter-spacing: 2px;
+            animation: glow 3s infinite alternate;
+            margin-bottom: 20px;
+        }
+        
+        .footer {
+            position: absolute;
+            bottom: 30px;
+            color: #98a0b3;
+            font-size: 16px;
+            text-align: center;
+            width: 100%;
+        }
+        
+        /* Efeito de partículas de fundo */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
+        .particle {
+            position: absolute;
+            background-color: rgba(125, 211, 252, 0.5);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+        }
+        
+        @keyframes glow {
+            0% {
+                text-shadow: 0 5px 25px rgba(125, 211, 252, 0.4);
+            }
+            100% {
+                text-shadow: 0 5px 45px rgba(125, 211, 252, 0.8), 0 0 25px rgba(255, 255, 255, 0.5);
+            }
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100vw);
+                opacity: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .zenith {
+                font-size: 80px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .zenith {
+                font-size: 60px;
+            }
+            
+            .footer {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    <div class="zenith">Zenith</div>
+    <div class="footer">
+        <p>Pedro Bernardo / Pedro Henrique / Ramon Paulo / Rikelyson Eduardo</p>
+    </div>
+
+    <script>
+        // Criar partículas de fundo
+        document.addEventListener('DOMContentLoaded', function() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Tamanho aleatório entre 2 e 6 pixels
+                const size = Math.random() * 4 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Posição inicial aleatória
+                particle.style.left = `${Math.random() * 100}vw`;
+                particle.style.top = `${Math.random() * 100}vh`;
+                
+                // Duração de animação aleatória
+                const duration = Math.random() * 10 + 15;
+                particle.style.animationDuration = `${duration}s`;
+                
+                // Atraso de animação aleatório
+                const delay = Math.random() * 5;
+                particle.style.animationDelay = `${delay}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        });
+    </script>
+</body>
+</html>

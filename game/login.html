@@ -217,25 +217,41 @@ enterBtn.addEventListener('click', () => {
 
   // Se começar com "adm", redireciona para a página admin
   if (group.startsWith('adm')) {
-    localStorage.setItem('playerGroup', group);
     loginMessage.textContent = 'Acessando área administrativa...';
     loginMessage.style.color = '#7dd3fc';
     setTimeout(() => {
-      window.location.href = '../adm/final.html';
+      window.location.href = '../adm/cat.html';
+    }, 600);
+    return;
+  }
+
+if (group.startsWith('qr')) {
+    loginMessage.textContent = 'Acessando QR code...';
+    loginMessage.style.color = '#7dd3fc';
+    setTimeout(() => {
+      window.location.href = '../adm/qr.html';
+    }, 600);
+    return;
+  }
+  
+  if (group.startsWith('z')) {
+    loginMessage.textContent = 'Acessando tela final...';
+    loginMessage.style.color = '#7dd3fc';
+    setTimeout(() => {
+      window.location.href = '../adm/z.html';
     }, 600);
     return;
   }
 
   // Validação normal para "grupo1" ... "grupo12"
-  if (!group.match(/^grupo([1-9]|1[0-2])$/)) {
-    loginMessage.textContent = 'Usuário inválido. Use o formato "grupoX" (X de 1 a 12).';
+  if (!group.match(/^grupo([1-9]|1[0-5])$/)) {
+    loginMessage.textContent = 'Usuário inválido. Use o formato "grupoX" (X de 1 a 15).';
     loginMessage.style.color = '#ff6b6b';
     return;
   }
 
   // Salvar o grupo no localStorage para usar depois no game
   localStorage.setItem('playerGroup', group);
-
   // Feedback visual de sucesso
   loginMessage.textContent = 'Entrando no jogo...';
   loginMessage.style.color = '#7dd3fc';

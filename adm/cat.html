@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo em Andamento - Zenith</title>
+    <style>
+        /* ===== Reset e estilos base ===== */
+        *,
+        *::before,
+        *::after { 
+            box-sizing: border-box; 
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+            background: #0b1220;
+            color: #e6eef8;
+            font-family: 'Inter', system-ui, Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        /* ===== Layout principal ===== */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0b1220 0%, #1a2a6c 100%);
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ===== Logo ===== */
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 30px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #7dd3fc, #06b6d4);
+            color: #04233a;
+            font-weight: 900;
+            font-size: 40px;
+            box-shadow: 0 10px 30px rgba(6, 40, 60, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        /* ===== Textos ===== */
+        h1 {
+            font-size: 2.5rem;
+            color: #7dd3fc;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(125, 211, 252, 0.3);
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #98a0b3;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .highlight {
+            color: #7dd3fc;
+            font-weight: 600;
+        }
+
+        /* ===== Indicador de atividade ===== */
+        .activity-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            background: rgba(125, 211, 252, 0.1);
+            border-radius: 50px;
+            border: 1px solid rgba(125, 211, 252, 0.2);
+            margin: 20px 0 30px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            background: #7dd3fc;
+            border-radius: 50%;
+            animation: blink 1.5s infinite;
+        }
+
+        .dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .activity-text {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #7dd3fc;
+        }
+
+        /* ===== Botão de redirecionamento ===== */
+        .redirect-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #7dd3fc;
+            text-decoration: none;
+            border-radius: 12px;
+            border: 1px solid rgba(125, 211, 252, 0.2);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .redirect-btn:hover {
+            background: rgba(125, 211, 252, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .redirect-btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-icon {
+            width: 18px;
+            height: 18px;
+            fill: #7dd3fc;
+        }
+
+        /* ===== Animações ===== */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
+        }
+
+        /* ===== Responsividade ===== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            p {
+                font-size: 1.1rem;
+            }
+            
+            .logo {
+                width: 80px;
+                height: 80px;
+                font-size: 32px;
+            }
+            
+            .redirect-btn {
+                padding: 12px 24px;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">Z</div>
+        <h1>Jogo em Andamento</h1>
+        <p>O jogo <span class="highlight">Zenith</span> está acontecendo agora! Aguarde até a finalização do jogo.</p>
+
+        <!-- Botão de redirecionamento - altere a URL no href para onde deseja redirecionar -->
+        <a href="../adm/final.html" class="redirect-btn">
+            <svg class="btn-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
+            </svg>
+            Ir para os Resultados
+        </a>
+    </div>
+
+    <script>
+        // Efeito de digitação no título (opcional)
+        document.addEventListener('DOMContentLoaded', function() {
+            const title = document.querySelector('h1');
+            const originalText = title.textContent;
+            title.textContent = '';
+            
+            let i = 0;
+            const typeWriter = () => {
+                if (i < originalText.length) {
+                    title.textContent += originalText.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                }
+            };
+            
+            typeWriter();
+        });
+
+        // Função para alterar o destino do botão dinamicamente
+        function setRedirectUrl(url) {
+            document.querySelector('.redirect-btn').href = url;
+        }
+
+        // Exemplo de uso: 
+        // setRedirectUrl('https://seu-site.com/pagina-desejada');
+    </script>
+</body>
+</html>
