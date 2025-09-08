@@ -525,17 +525,17 @@
 
     function renderPodium(grupos){
       // grupos ordered desc (index 0 = 1st)
-      const g1 = grupos[0] || { grupo:'—', pontos:0 };
-      const g2 = grupos[1] || { grupo:'—', pontos:0 };
-      const g3 = grupos[2] || { grupo:'—', pontos:0 };
+      const g1 = grupos[0] || { grupo:'—', apelido: '—', pontos:0 };
+      const g2 = grupos[1] || { grupo:'—', apelido: '—', pontos:0 };
+      const g3 = grupos[2] || { grupo:'—', apelido: '—', pontos:0 };
 
-      name1.textContent = g1.grupo || '—';
+      name1.textContent = g1.apelido || g1.grupo || '—';
       points1.textContent = String(g1.pontos || 0) + ' pts';
 
-      name2.textContent = g2.grupo || '—';
+      name2.textContent = g2.apelido || g2.grupo || '—';
       points2.textContent = String(g2.pontos || 0) + ' pts';
 
-      name3.textContent = g3.grupo || '—';
+      name3.textContent = g3.apelido || g3.grupo || '—';
       points3.textContent = String(g3.pontos || 0) + ' pts';
 
       // others list

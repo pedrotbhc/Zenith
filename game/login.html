@@ -76,6 +76,27 @@
     #groupInput::placeholder {
       color: #98a0b3;
     }
+    
+    #nicknameInput {
+      flex: 1;
+      padding: 14px 18px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(7, 20, 39, 0.6);
+      color: #e6eef8;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    #nicknameInput:focus {
+      outline: none;
+      border-color: rgba(125, 211, 252, 0.4);
+      box-shadow: 0 0 0 3px rgba(125, 211, 252, 0.1);
+    }
+
+    #nicknameInput::placeholder {
+      color: #98a0b3;
+    }
 
     /* ===== Botões ===== */
     .btn {
@@ -198,6 +219,7 @@
     
     <div class="controls">
       <input type="text" id="groupInput" placeholder="Digite o usuário..." class="btn ghost">
+      <input type="text" id="nicknameInput" placeholder="Digite o nickname..." class="btn ghost">
       <button id="enterBtn" class="btn primary">Entrar</button>
     </div>
     
@@ -208,12 +230,15 @@
 
   <script>
     const enterBtn = document.getElementById('enterBtn');
-const groupInput = document.getElementById('groupInput');
-const loginMessage = document.getElementById('loginMessage');
+		const groupInput = document.getElementById('groupInput');
+
+		const loginMessage = document.getElementById('loginMessage');
+		const nicknameInput = document.getElementById('nicknameInput');
 
 // Adicionar evento de clique no botão
 enterBtn.addEventListener('click', () => {
   const group = groupInput.value.trim().toLowerCase();
+  const nickname = nicknameInput.value.trim();
 
   // Se começar com "adm", redireciona para a página admin
   if (group.startsWith('adm')) {
@@ -252,6 +277,7 @@ if (group.startsWith('qr')) {
 
   // Salvar o grupo no localStorage para usar depois no game
   localStorage.setItem('playerGroup', group);
+  localStorage.setItem('groupNickname', nickname);
   // Feedback visual de sucesso
   loginMessage.textContent = 'Entrando no jogo...';
   loginMessage.style.color = '#7dd3fc';

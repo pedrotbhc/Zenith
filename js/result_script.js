@@ -64,19 +64,29 @@
 
   /* ---------------- Helpers ---------------- */
   function detectGroupName(){
-  // pegar direto do localStorage do login
-  const group = localStorage.getItem('playerGroup');
-  if(group) return group;
+    // pegar direto do localStorage do login
+    const group = localStorage.getItem('playerGroup');
+    if(group) return group;
 
-  // fallback antigo, se quiser
-  const s = sessionStorage.getItem('grupo') || sessionStorage.getItem('group');
-  if(s) return s;
+    // fallback antigo, se quiser
+    const s = sessionStorage.getItem('grupo') || sessionStorage.getItem('group');
+    if(s) return s;
 
-  const l = localStorage.getItem('grupo') || localStorage.getItem('group') || localStorage.getItem('team') || localStorage.getItem('quiz_group');
-  if(l) return l;
+    const l = localStorage.getItem('grupo') || localStorage.getItem('group') || localStorage.getItem('team') || localStorage.getItem('quiz_group');
+    if(l) return l;
 
-  return null;
-}
+    return null;
+  }
+
+  // Nova função para detectar o apelido do grupo
+  function detectGroupNickname(){
+    // Primeiro tenta pegar do localStorage
+    const nickname = localStorage.getItem('groupNickname');
+    if(nickname) return nickname;
+    
+    // Se não tiver apelido, retorna o ID do grupo como fallback
+    return detectGroupName() || 'Grupo Sem Nome';
+  }
 
   function normalizeId(name){
     return encodeURIComponent((name || '').trim().toLowerCase().replace(/\s+/g,'_') || ('grupo_' + Date.now()));
@@ -100,10 +110,14 @@
     const total = parsed && (typeof parsed.totalPoints === 'number' ? parsed.totalPoints : (typeof parsed.Pontos === 'number' ? parsed.Pontos : (typeof parsed.pontos === 'number' ? parsed.pontos : 0)));
     totalPointsEl.textContent = String(total);
 
-    const gp = detectGroupName() || (parsed && (parsed.grupo || parsed.group || parsed.grupo_nome || parsed.groupName)) || null;
-    if(gp){
-      groupNameEl.textContent = gp;
-      groupNameSmallEl.textContent = `Grupo: ${gp}`;
+    // Usar o apelido se disponível, caso contrário usar o ID do grupo
+    const groupId = detectGroupName();
+    const groupNickname = detectGroupNickname();
+    const displayName = groupNickname || groupId;
+    
+    if(displayName){
+      groupNameEl.textContent = displayName;
+      groupNameSmallEl.textContent = `Grupo: ${displayName}`;
       editGroupEl.style.display = 'none';
     } else {
       groupNameEl.textContent = '—';
@@ -166,9 +180,14 @@
     }
 
     // INCIO DA PARTE QUE DEFINE O JSON!!! //
+    // Obter o apelido do grupo
+    const groupNickname = detectGroupNickname();
+    
     const payload = {
       grupo: groupName,
-      pontos: parsed && (typeof parsed.pontos === 'number' ? parsed.pontos : (typeof parsed.Pontos === 'number' ? parsed.Pontos : (typeof parsed.totalPoints === 'number' ? parsed.totalPoints : 0)))
+      apelido: groupNickname, // Adicionando o apelido ao payload
+      pontos: parsed && (typeof parsed.pontos === 'number' ? parsed.pontos : (typeof parsed.Pontos === 'number' ? parsed.Pontos : (typeof parsed.totalPoints === 'number' ? parsed.totalPoints : 0))),
+      // Incluir também os estágios completos se disponíveis
     };
     const jsonStr = JSON.stringify(payload, null, 2);
     const blob = new Blob([jsonStr], { type: 'application/json' });
@@ -255,4 +274,4 @@
     }
   })();
 
-})(); 
+})();

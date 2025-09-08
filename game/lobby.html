@@ -267,8 +267,10 @@
       
       // Verificar se o grupo foi definido
       const playerGroup = localStorage.getItem('playerGroup');
+      const groupNickname = localStorage.getItem('groupNickname');
       if (playerGroup) {
-        lobbyStatus.textContent = `Conectado como: ${playerGroup}`;
+      	const displayName = groupNickname ? `${groupNickname} (${playerGroup})` : playerGroup;
+        lobbyStatus.textContent = `Conectado como: ${displayName}`;
       }
       
       // Botão iniciar jogo
