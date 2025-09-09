@@ -383,5 +383,170 @@
       "d": "Diversas áreas da biologia e medicina"
     },
     "correct": "d"
+  },
+    {
+    "id": "medium36",
+    "prompt": "Qual mecanismo evolutivo é responsável por mudanças aleatórias nas frequências alélicas, especialmente em populações pequenas?",
+    "choices": {
+      "a": "Seleção natural",
+      "b": "Deriva genética",
+      "c": "Fluxo gênico",
+      "d": "Mutação"
+    },
+    "correct": "b"
+  },
+  {
+    "id": "medium37",
+    "prompt": "A diferença fundamental entre especiação alopátrica e simpátrica é que:",
+    "choices": {
+      "a": "A especiação simpátrica requer diferenças comportamentais",
+      "b": "A especiação alopátrica não requer isolamento geográfico",
+      "c": "A especiação simpátrica ocorre na mesma área geográfica",
+      "d": "A especiação alopátrica é sempre mais rápida"
+    },
+    "correct": "c"
+  },
+  {
+    "id": "medium38",
+    "prompt": "Quando duas espécies evoluem mutualmente em resposta uma à outra, como predador e presa, isso é chamado de:",
+    "choices": {
+      "a": "Evolução convergente",
+      "b": "Coevolução",
+      "c": "Evolução divergente",
+      "d": "Radiação adaptativa"
+    },
+    "correct": "b"
+  },
+  {
+    "id": "medium39",
+    "prompt": "Qual dos seguintes é um exemplo de barreira pós-zigótica?",
+    "choices": {
+      "a": "Esterilidade do híbrido",
+      "b": "Incompatibilidade gamética",
+      "c": "Isolamento de habitat",
+      "d": "Isolamento temporal"
+    },
+    "correct": "a"
+  },
+  {
+    "id": "medium40",
+    "prompt": "O modelo evolutivo que propõe longos períodos de estabilidade pontuados por rápidos eventos de especiação é conhecido como:",
+    "choices": {
+      "a": "Deriva genética",
+      "b": "Equilíbrio pontuado",
+      "c": "Gradualismo",
+      "d": "Seleção direcional"
+    },
+    "correct": "b"
+  },
+  {
+    "id": "medium41",
+    "prompt": "Em biologia evolutiva, a 'aptidão' de um organismo é primariamente medida por:",
+    "choices": {
+      "a": "Sua longevidade",
+      "b": "Seu sucesso reprodutivo",
+      "c": "Sua inteligência",
+      "d": "Sua força física"
+    },
+    "correct": "b"
+  },
+  {
+    "id": "medium42",
+    "prompt": "Qual dos seguintes NÃO é uma fonte de variação genética?",
+    "choices": {
+      "a": "Fluxo gênico",
+      "b": "Recombinação genética",
+      "c": "Seleção natural",
+      "d": "Mutação"
+    },
+    "correct": "c"
+  },
+  {
+    "id": "medium43",
+    "prompt": "Asas de morcegos e asas de insetos são exemplos de:",
+    "choices": {
+      "a": "Estruturas análogas",
+      "b": "Estruturas homólogas",
+      "c": "Estruturas vestigiais",
+      "d": "Evolução convergente"
+    },
+    "correct": "a"
+  },
+  {
+    "id": "medium44",
+    "prompt": "O princípio da parcimônia na reconstrução filogenética afirma que:",
+    "choices": {
+      "a": "A hipótese com mais mudanças evolutivas é a mais provável",
+      "b": "A hipótese com menos mudanças evolutivas é a mais provável",
+      "c": "A evolução nunca é parcimoniosa",
+      "d": "Todas as hipóteses são igualmente prováveis"
+    },
+    "correct": "b"
+  },
+  {
+    "id": "medium45",
+    "prompt": "Uma população em equilíbrio de Hardy-Weinberg:",
+    "choices": {
+      "a": "Não está evoluindo",
+      "b": "Está sob forte seleção natural",
+      "c": "Está evoluindo rapidamente",
+      "d": "Experimenta fluxo gênico intenso"
+    },
+    "correct": "a"
+  },
+  {
+    "id": "medium46",
+    "prompt": "Novos alelos em uma população são introduzidos primarily através de:",
+    "choices": {
+      "a": "Deriva genética",
+      "b": "Cruzamento consanguíneo",
+      "c": "Seleção natural",
+      "d": "Mutação"
+    },
+    "correct": "d"
+  },
+  {
+    "id": "medium47",
+    "prompt": "A evolução de características semelhantes em linhagens não aparentadas devido a pressões seletivas similares é chamada de:",
+    "choices": {
+      "a": "Evolução paralela",
+      "b": "Evolução divergente",
+      "c": "Coevolução",
+      "d": "Evolução convergente"
+    },
+    "correct": "d"
+  },
+  {
+    "id": "medium48",
+    "prompt": "Qual dos seguintes é um mecanismo de isolamento pré-zigótico?",
+    "choices": {
+      "a": "Esterilidade do híbrido",
+      "b": "Quebra do híbrido",
+      "c": "Isolamento temporal",
+      "d": "Inviabilidade do híbrido"
+    },
+    "correct": "c"
+  },
+  {
+    "id": "medium49",
+    "prompt": "O estudo da distribuição geográfica das espécies e como ela se relaciona com a evolução é conhecido como:",
+    "choices": {
+      "a": "Genética de populações",
+      "b": "Ecologia",
+      "c": "Biogeografia",
+      "d": "Paleontologia"
+    },
+    "correct": "c"
+  },
+  {
+    "id": "medium50",
+    "prompt": "A radiação adaptativa é frequentemente desencadeada por:",
+    "choices": {
+      "a": "Redução da competição",
+      "b": "Aumento da pressão predatória",
+      "c": "Disponibilidade de novos nichos ecológicos",
+      "d": "Ambientes estáveis e previsíveis"
+    },
+    "correct": "c"
   }
 ]

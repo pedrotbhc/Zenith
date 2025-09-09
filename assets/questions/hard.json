@@ -163,5 +163,170 @@
       "d": "Uma explicação abrangente e bem sustentada para um fenômeno natural"
     },
     "correct": "d"
+  },
+    {
+    "id": "hard16",
+    "prompt": "A teoria da evolução neutra de Motoo Kimura propõe que:",
+    "choices": {
+      "a": "Todas as mutações são deletérias e eliminadas pela seleção natural",
+      "b": "A seleção natural é o único mecanismo de evolução molecular",
+      "c": "As mutações neutras não ocorrem em populações naturais",
+      "d": "A maioria das variações moleculares é neutra e evolui por deriva genética"
+    },
+    "correct": "d"
+  },
+  {
+    "id": "hard17",
+    "prompt": "O conceito de 'espécie fantasma' em filogenia refere-se a:",
+    "choices": {
+      "a": "Organismos com DNA impossível de sequenciar",
+      "b": "Linhagens que existiram mas não deixaram descendentes",
+      "c": "Espécies que evoluíram independentemente em múltiplas ocasiões",
+      "d": "Espécies extintas que não deixaram registro fóssil"
+    },
+    "correct": "d"
+  },
+  {
+    "id": "hard18",
+    "prompt": "A evolução do sistema de determinação sexual XY em mamíferos ilustra:",
+    "choices": {
+      "a": "Como cromossomos sexuais evoluíram a partir de autossomos",
+      "b": "Porque machos são sempre heterogaméticos",
+      "c": "Como a seleção sexual opera apenas em fêmeas",
+      "d": "Porque cromossomos Y são sempre maiores que X"
+    },
+    "correct": "a"
+  },
+  {
+    "id": "hard19",
+    "prompt": "A 'seleção de grupo' é um conceito controverso porque:",
+    "choices": {
+      "a": "É difícil demonstrar que opera independentemente da seleção individual",
+      "b": "Só ocorre em espécies com comportamento eusocial",
+      "c": "Nunca foi observada em populações naturais",
+      "d": "Ela contradiz completamente a seleção natural"
+    },
+    "correct": "a"
+  },
+  {
+    "id": "hard20",
+    "prompt": "A evolução da eusocialidade em insetos é melhor explicada por:",
+    "choices": {
+      "a": "Mutação direcionada para o comportamento altruísta",
+      "b": "Seleção de parentesco combinada com vantagens ecológicas",
+      "c": "Seleção de grupo pura",
+      "d": "Coevolução com parasitas específicos"
+    },
+    "correct": "b"
+  },
+  {
+    "id": "hard21",
+    "prompt": "A 'taxonomia filogenética' difere da taxonomia tradicional porque:",
+    "choices": {
+      "a": "Rejeita completamente a noção de hierarquia taxonômica",
+      "b": "Só considera espécies existentes, ignorando fósseis",
+      "c": "Agrupa organismos exclusivamente por ancestralidade comum",
+      "d": "Baseia-se exclusivamente em características morfológicas"
+    },
+    "correct": "c"
+  },
+  {
+    "id": "hard22",
+    "prompt": "O paradoxo de Lewontin sobre variabilidade genética mostra que:",
+    "choices": {
+      "a": "Não há variação genética significativa em humanos",
+      "b": "Raças humanas são geneticamente muito distintas",
+      "c": "Humanos têm mais variabilidade genética entre que dentro populações",
+      "d": "A maioria da variação genética humana está dentro de populações, não entre elas"
+    },
+    "correct": "d"
+  },
+  {
+    "id": "hard23",
+    "prompt": "A 'evolução modular' refere-se a:",
+    "choices": {
+      "a": "Mecanismos evolutivos que operam apenas em organismos multicelulares",
+      "b": "Mudanças em módulos genéticos independentes que podem evoluir separadamente",
+      "c": "A teoria de que a evolução avança por saltos grandes e discretos",
+      "d": "Evolução que ocorre apenas em laboratório sob condições controladas"
+    },
+    "correct": "b"
+  },
+  {
+    "id": "hard24",
+    "prompt": "A 'seleção sexual runaway' (corrida sem freio) de Fisher explica:",
+    "choices": {
+      "a": "Como características exageradas podem evoluir mesmo reduzindo a sobrevivência",
+      "b": "Porque machos sempre evoluem para ser maiores que fêmeas",
+      "c": "Como a seleção natural sempre prevalece sobre a seleção sexual",
+      "d": "A evolução de características crípticas em presas"
+    },
+    "correct": "a"
+  },
+  {
+    "id": "hard25",
+    "prompt": "A 'transferência horizontal de genes' é particularmente importante na evolução de:",
+    "choices": {
+      "a": "Mamíferos placentários",
+      "b": "Aves voadoras",
+      "c": "Plantas com flores",
+      "d": "Procariotos"
+    },
+    "correct": "d"
+  },
+  {
+    "id": "hard26",
+    "prompt": "O conceito de 'construção de nicho' na evolução refere-se a:",
+    "choices": {
+      "a": "A evolução de características para ocupar nichos vagos",
+      "b": "Como organismos modificam seus ambientes e afetam pressões seletivas futuras",
+      "c": "A competição por recursos em ambientes estáveis",
+      "d": "A extinção de espécies que não conseguem adaptar seus nichos"
+    },
+    "correct": "b"
+  },
+  {
+    "id": "hard27",
+    "prompt": "A 'evolução do envelhecimento' é explicada principalmente por:",
+    "choices": {
+      "a": "A seleção para vida eterna em todas as espécies",
+      "b": "A perda progressiva de informação genética ao longo da vida",
+      "c": "A acumulação de mutações deletérias de efeito tardio",
+      "d": "O desgaste natural inevitável dos organismos"
+    },
+    "correct": "c"
+  },
+  {
+    "id": "hard28",
+    "prompt": "A 'filogeografia' estuda:",
+    "choices": {
+      "a": "A relação entre tamanho corporal e distribuição geográfica",
+      "b": "A distribuição geográfica de linhagens genéticas e seus históricos evolutivos",
+      "c": "A evolução do comportamento de migração em aves",
+      "d": "A diversidade de fósseis em diferentes estratos geológicos"
+    },
+    "correct": "b"
+  },
+  {
+    "id": "hard29",
+    "prompt": "A 'seleção frequência-dependente' ocorre quando:",
+    "choices": {
+      "a": "A seleção natural opera em diferentes frequências em habitats distintos",
+      "b": "O sucesso de um fenótipo depende de sua frequência na população",
+      "c": "A deriva genética é mais forte em populações de tamanho variável",
+      "d": "Mutações ocorrem em taxas constantes independente do ambiente"
+    },
+    "correct": "b"
+  },
+  {
+    "id": "hard30",
+    "prompt": "A 'evolução da multicelularidade' representa uma transição evolutiva major porque:",
+    "choices": {
+      "a": "Sempre resulta em aumento de tamanho corporal",
+      "b": "Só ocorreu uma vez na história da vida",
+      "c": "É irreversível uma vez que evolui",
+      "d": "Requer o surgimento de cooperação e divisão de trabalho entre células"
+    },
+    "correct": "d"
   }
 ]

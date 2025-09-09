@@ -383,5 +383,170 @@
       "d": "Todas as espécies se formam no mesmo lugar."
     },
     "correct": "b"
+  },
+    {
+    "id": "easy36",
+    "prompt": "O que é evolução convergente?",
+    "choices": {
+      "a": "A fusão de duas espécies em uma",
+      "b": "A extinção de espécies similares",
+      "c": "Espécies não aparentadas desenvolvem características similares devido a ambientes similares",
+      "d": "Espécies que se tornam mais diferentes ao longo do tempo"
+    },
+    "correct": "c"
+  },
+  {
+    "id": "easy37",
+    "prompt": "Qual é o principal mecanismo de evolução proposto por Darwin?",
+    "choices": {
+      "a": "Seleção Artificial",
+      "b": "Seleção Natural",
+      "c": "Deriva Genética",
+      "d": "Mutação genética"
+    },
+    "correct": "b"
+  },
+  {
+    "id": "easy38",
+    "prompt": "O que significa 'fitness' em biologia evolutiva?",
+    "choices": {
+      "a": "Sucesso reprodutivo de um organismo",
+      "b": "Tamanho corporal de um animal",
+      "c": "Inteligência de uma espécie",
+      "d": "Capacidade física de correr rápido"
+    },
+    "correct": "a"
+  },
+  {
+    "id": "easy39",
+    "prompt": "O que é um antepassado comum?",
+    "choices": {
+      "a": "Um fóssil muito antigo",
+      "b": "O primeiro ser vivo na Terra",
+      "c": "Uma espécie da qual duas ou mais espécies descendem",
+      "d": "Um humano primitivo"
+    },
+    "correct": "c"
+  },
+  {
+    "id": "easy40",
+    "prompt": "Qual destes é um exemplo de seleção sexual?",
+    "choices": {
+      "a": "Plantas desenvolverem raízes mais profundas",
+      "b": "Coelhos se reproduzirem rapidamente",
+      "c": "Pássaros machos com penas coloridas para atrair fêmeas",
+      "d": "Ursos polares desenvolverem pelagem branca"
+    },
+    "correct": "c"
+  },
+  {
+    "id": "easy41",
+    "prompt": "O que é deriva genética?",
+    "choices": {
+      "a": "Mudança aleatória nas frequências gênicas em populações pequenas",
+      "b": "Troca de genes entre espécies",
+      "c": "Mudança intencional nos genes",
+      "d": "Seleção de genes benéficos"
+    },
+    "correct": "a"
+  },
+  {
+    "id": "easy42",
+    "prompt": "O que é um fóssil de transição?",
+    "choices": {
+      "a": "Um fóssil de animal extinto recentemente",
+      "b": "Um fóssil que mostra características intermediárias entre grupos",
+      "c": "Um fóssil que muda de lugar",
+      "d": "Um fóssil muito bem preservado"
+    },
+    "correct": "b"
+  },
+  {
+    "id": "easy43",
+    "prompt": "O que é seleção artificial?",
+    "choices": {
+      "a": "Seleção que ocorre apenas em laboratório",
+      "b": "Seleção natural acelerada",
+      "c": "Seleção de traços aleatórios",
+      "d": "Seleção feita por humanos para características desejadas"
+    },
+    "correct": "d"
+  },
+  {
+    "id": "easy44",
+    "prompt": "O que é adaptação fisiológica?",
+    "choices": {
+      "a": "Mudança no comportamento de um animal",
+      "b": "Mudança nas funções internas do organismo",
+      "c": "Mudança no tamanho corporal",
+      "d": "Mudança na cor da pelagem"
+    },
+    "correct": "b"
+  },
+  {
+    "id": "easy45",
+    "prompt": "O que é evolução divergente?",
+    "choices": {
+      "a": "Extinção em massa de espécies",
+      "b": "Espécies diferentes tornam-se mais similares",
+      "c": "Fusão de duas espécies",
+      "d": "Espécies similares tornam-se mais diferentes"
+    },
+    "correct": "d"
+  },
+  {
+    "id": "easy46",
+    "prompt": "Qual é a importância da variação genética?",
+    "choices": {
+      "a": "Garante que todos sejam iguais",
+      "b": "Cria espécies instantaneamente",
+      "c": "Impede a evolução",
+      "d": "Fornece matéria-prima para a seleção natural"
+    },
+    "correct": "d"
+  },
+  {
+    "id": "easy47",
+    "prompt": "O que é um gene?",
+    "choices": {
+      "a": "Uma proteína",
+      "b": "Um tipo de célula",
+      "c": "Um órgão do corpo",
+      "d": "Uma unidade de hereditariedade"
+    },
+    "correct": "d"
+  },
+  {
+    "id": "easy48",
+    "prompt": "O que é especiação simpátrica?",
+    "choices": {
+      "a": "Formação de espécies com isolamento geográfico",
+      "b": "Fusão de espécies",
+      "c": "Formação de espécies sem isolamento geográfico",
+      "d": "Extinção de espécies"
+    },
+    "correct": "c"
+  },
+  {
+    "id": "easy49",
+    "prompt": "O que é seleção estabilizadora?",
+    "choices": {
+      "a": "Seleção contra extremos",
+      "b": "Seleção de novas características",
+      "c": "Seleção aleatória",
+      "d": "Seleção a favor de extremos"
+    },
+    "correct": "a"
+  },
+  {
+    "id": "easy50",
+    "prompt": "O que é um relógio molecular?",
+    "choices": {
+      "a": "Mede o tempo de vida dos fósseis",
+      "b": "Mede a velocidade da evolução",
+      "c": "Estima o tempo de divergência entre espécies usando mutações genéticas",
+      "d": "Um instrumento de laboratório"
+    },
+    "correct": "c"
   }
 ]
