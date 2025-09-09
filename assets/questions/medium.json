@@ -3,54 +3,54 @@
     "id": "medium01",
     "prompt": "Um biólogo observa que, em uma população de mariposas, a coloração escura tornou-se mais comum após a industrialização escurecer as árvores com fuligem. Este é um exemplo clássico de:",
     "choices": {
-      "a": "Deriva genética",
-      "b": "Seleção direcional",
+      "a": "Especiação simpátrica",
+      "b": "Deriva genética",
       "c": "Mutação dirigida",
-      "d": "Especiação simpátrica"
+      "d": "Seleção direcional"
     },
-    "correct": "b"
+    "correct": "d"
   },
   {
     "id": "medium02",
     "prompt": "Em ilhas oceânicas, é comum encontrar espécies endêmicas (que não existem em nenhum outro lugar) que evoluíram a partir de ancestrais que chegaram do continente. Este processo é melhor explicado por:",
     "choices": {
       "a": "Seleção sexual",
-      "b": "Irradiação adaptativa",
-      "c": "Convergência evolutiva",
+      "b": "Convergência evolutiva",
+      "c": "Irradiação adaptativa",
       "d": "Equilíbrio pontuado"
     },
-    "correct": "b"
+    "correct": "c"
   },
   {
     "id": "medium03",
     "prompt": "Duas populações de pássaros que vivem em lados opostos de um grande vale desenvolveram cantos de acasalamento diferentes ao longo do tempo. Este é um exemplo de:",
     "choices": {
-      "a": "Isolamento geográfico",
-      "b": "Isolamento reprodutivo pré-zigótico",
-      "c": "Isolamento reprodutivo pós-zigótico",
-      "d": "Seleção disruptiva"
+      "a": "Seleção disruptiva",
+      "b": "Isolamento reprodutivo pós-zigótico",
+      "c": "Isolamento reprodutivo pré-zigótico",
+      "d": "Isolamento geográfico"
     },
-    "correct": "b"
+    "correct": "c"
   },
   {
     "id": "medium04",
     "prompt": "A existência de apêndices vestigiais como o cóccix humano e ossos pélvicos em baleias sugere que:",
     "choices": {
-      "a": "Essas estruturas não tinham função em ancestrais",
-      "b": "Esses organismos estão evoluindo para perder essas estruturas",
-      "c": "Compartilhamos ancestrais com organismos que usavam essas estruturas",
-      "d": "São exemplos de convergência evolutiva"
+      "a": "Compartilhamos ancestrais com organismos que usavam essas estruturas",
+      "b": "São exemplos de convergência evolutiva",
+      "c": "Essas estruturas não tinham função em ancestrais",
+      "d": "Esses organismos estão evoluindo para perder essas estruturas"
     },
-    "correct": "c"
+    "correct": "a"
   },
   {
     "id": "medium05",
     "prompt": "Em uma população de plantas, indivíduos com altura média têm maior sucesso reprodutivo que plantas muito baixas ou muito altas. Este é um exemplo de:",
     "choices": {
       "a": "Seleção estabilizadora",
-      "b": "Seleção direcional",
-      "c": "Seleção disruptiva",
-      "d": "Deriva genética"
+      "b": "Seleção disruptiva",
+      "c": "Deriva genética",
+      "d": "Seleção direcional"
     },
     "correct": "a"
   },
@@ -58,41 +58,41 @@
     "id": "medium06",
     "prompt": "A resistência a antibióticos em bactérias ilustra o princípio evolutivo de que:",
     "choices": {
-      "a": "As bactérias aprendem a se defender dos antibióticos",
-      "b": "A seleção natural atua sobre variação já existente na população",
+      "a": "A seleção natural atua sobre variação já existente na população",
+      "b": "Antibióticos criam novas espécies de bactérias",
       "c": "Mutações ocorrem especificamente para combater antibióticos",
-      "d": "Antibióticos criam novas espécies de bactérias"
+      "d": "As bactérias aprendem a se defender dos antibióticos"
     },
-    "correct": "b"
+    "correct": "a"
   },
   {
     "id": "medium07",
     "prompt": "A similaridade no desenvolvimento embrionário entre vertebrados (peixes, répteis, aves e mamíferos) sugere que:",
     "choices": {
       "a": "Todos têm o mesmo nicho ecológico",
-      "b": "Compartilham um ancestral comum",
-      "c": "Sofrem dos mesmos tipos de mutação",
-      "d": "Estão igualmente adaptados ao ambiente"
+      "b": "Sofrem dos mesmos tipos de mutação",
+      "c": "Estão igualmente adaptados ao ambiente",
+      "d": "Compartilham um ancestral comum"
     },
-    "correct": "b"
+    "correct": "d"
   },
   {
     "id": "medium08",
     "prompt": "O fato de marsupiais como cangurus e gambás terem evoluído independentemente na Austrália e América do Sul, respectivamente, é um exemplo de:",
     "choices": {
-      "a": "Convergência evolutiva",
-      "b": "Evolução divergente",
-      "c": "Coevolução",
+      "a": "Evolução divergente",
+      "b": "Coevolução",
+      "c": "Convergência evolutiva",
       "d": "Especiação simpátrica"
     },
-    "correct": "b"
+    "correct": "a"
   },
   {
     "id": "medium09",
     "prompt": "A grande diversidade de tentilhões nas Ilhas Galápagos, com bicos adaptados a diferentes alimentos, é resultado de:",
     "choices": {
-      "a": "Adaptações individuais durante a vida",
-      "b": "Seleção artificial",
+      "a": "Seleção artificial",
+      "b": "Adaptações individuais durante a vida",
       "c": "Radiação adaptativa",
       "d": "Hibridização entre espécies"
     },
@@ -102,41 +102,41 @@
     "id": "medium10",
     "prompt": "A teoria da evolução é sustentada por múltiplas linhas de evidência independentes. Qual das seguintes NÃO é uma evidência direta da evolução?",
     "choices": {
-      "a": "Registro fóssil",
-      "b": "Anatomia comparada",
-      "c": "Preferência alimentar dos organismos",
-      "d": "Biogeografia"
+      "a": "Anatomia comparada",
+      "b": "Biogeografia",
+      "c": "Registro fóssil",
+      "d": "Preferência alimentar dos organismos"
     },
-    "correct": "c"
+    "correct": "d"
   },
   {
     "id": "medium11",
     "prompt": "Em populações pequenas e isoladas, é mais provável que mudanças na frequência de alelos ocorram devido a:",
     "choices": {
-      "a": "Seleção natural forte",
-      "b": "Mutações frequentes",
-      "c": "Deriva genética",
+      "a": "Deriva genética",
+      "b": "Seleção natural forte",
+      "c": "Mutações frequentes",
       "d": "Fluxo gênico intenso"
     },
-    "correct": "c"
+    "correct": "a"
   },
   {
     "id": "medium12",
     "prompt": "A coexistência de girafas com pescoços de diferentes comprimentos na mesma população sugere que:",
     "choices": {
-      "a": "A seleção natural não está atuando",
-      "b": "Existe variação genética na população",
-      "c": "Todas as girafas estão igualmente adaptadas",
-      "d": "A evolução parou nesta espécie"
+      "a": "A evolução parou nesta espécie",
+      "b": "A seleção natural não está atuando",
+      "c": "Existe variação genética na população",
+      "d": "Todas as girafas estão igualmente adaptadas"
     },
-    "correct": "b"
+    "correct": "c"
   },
   {
     "id": "medium13",
     "prompt": "O conceito de 'fitness' evolutivo refere-se principalmente à:",
     "choices": {
-      "a": "Força física do organismo",
-      "b": "Capacidade de sobreviver a qualquer custo",
+      "a": "Capacidade de sobreviver a qualquer custo",
+      "b": "Força física do organismo",
       "c": "Sucesso reprodutivo relativo",
       "d": "Adaptabilidade a qualquer ambiente"
     },
@@ -146,10 +146,10 @@
     "id": "medium14",
     "prompt": "A evolução do cavalo moderno, mostrada no registro fóssil por mudanças no tamanho corporal e número de dedos, é um exemplo de:",
     "choices": {
-      "a": "Evolução convergente",
+      "a": "Equilíbrio pontuado",
       "b": "Macroevolução",
       "c": "Especiação instantânea",
-      "d": "Equilíbrio pontuado"
+      "d": "Evolução convergente"
     },
     "correct": "b"
   },
@@ -157,8 +157,8 @@
     "id": "medium15",
     "prompt": "A coevolução entre flores e seus polinizadores geralmente resulta em:",
     "choices": {
-      "a": "Adaptações menos especializadas",
-      "b": "Mimetismo agressivo",
+      "a": "Mimetismo agressivo",
+      "b": "Adaptações menos especializadas",
       "c": "Adaptações mútuas especializadas",
       "d": "Isolamento geográfico"
     },
@@ -180,11 +180,11 @@
     "prompt": "A distribuição geográfica de espécies relacionadas em ilhas próximas ao continente apoia a teoria da evolução porque:",
     "choices": {
       "a": "Mostra que espécies diferentes surgem independentemente em cada ilha",
-      "b": "Demonstra que ilhas sempre têm maior biodiversidade",
-      "c": "Revela padrões de descendência com modificação a partir de ancestrais continentais",
-      "d": "Prova que o ambiente não influencia a evolução"
+      "b": "Revela padrões de descendência com modificação a partir de ancestrais continentais",
+      "c": "Prova que o ambiente não influencia a evolução",
+      "d": "Demonstra que ilhas sempre têm maior biodiversidade"
     },
-    "correct": "c"
+    "correct": "b"
   },
   {
     "id": "medium18",
@@ -192,21 +192,21 @@
     "choices": {
       "a": "Funções idênticas em todos os organismos",
       "b": "Adaptação independente a ambientes similares",
-      "c": "Ancestral comum com modificações adaptativas",
-      "d": "Evolução convergente"
+      "c": "Evolução convergente",
+      "d": "Ancestral comum com modificações adaptativas"
     },
-    "correct": "c"
+    "correct": "d"
   },
   {
     "id": "medium19",
     "prompt": "Em um ambiente que sofre mudanças graduais, a seleção natural tende a favorecer:",
     "choices": {
-      "a": "Indivíduos com características extremas",
+      "a": "Especiação instantânea",
       "b": "A manutenção do status quo",
-      "c": "Plasticidade fenotípica",
-      "d": "Especiação instantânea"
+      "c": "Indivíduos com características extremas",
+      "d": "Plasticidade fenotípica"
     },
-    "correct": "c"
+    "correct": "d"
   },
   {
     "id": "medium20",
@@ -214,8 +214,8 @@
     "choices": {
       "a": "Apenas genética de populações",
       "b": "Genética, paleontologia e sistemática",
-      "c": "Apenas ecologia e comportamento",
-      "d": "Exclusivamente molecular"
+      "c": "Exclusivamente molecular",
+      "d": "Apenas ecologia e comportamento"
     },
     "correct": "b"
   },
@@ -223,32 +223,32 @@
     "id": "medium21",
     "prompt": "O isolamento reprodutivo entre espécies é importante porque:",
     "choices": {
-      "a": "Impede o fluxo gênico entre populações",
-      "b": "Aumenta a competição intraespecífica",
-      "c": "Reduz a variabilidade genética",
-      "d": "Promove mutações direcionadas"
+      "a": "Promove mutações direcionadas",
+      "b": "Impede o fluxo gênico entre populações",
+      "c": "Aumenta a competição intraespecífica",
+      "d": "Reduz a variabilidade genética"
     },
-    "correct": "a"
+    "correct": "b"
   },
   {
     "id": "medium22",
     "prompt": "A seleção sexual frequentemente resulta em:",
     "choices": {
-      "a": "Diminuição do dimorfismo sexual",
-      "b": "Características que reduzem a capacidade de sobrevivência",
-      "c": "Uniformidade na aparência dos organismos",
-      "d": "Isolamento geográfico"
+      "a": "Uniformidade na aparência dos organismos",
+      "b": "Isolamento geográfico",
+      "c": "Diminuição do dimorfismo sexual",
+      "d": "Características que reduzem a capacidade de sobrevivência"
     },
-    "correct": "b"
+    "correct": "d"
   },
   {
     "id": "medium23",
     "prompt": "A comparação de sequências de DNA entre espécies diferentes permite:",
     "choices": {
-      "a": "Determinar exactamente quando divergiram",
+      "a": "Prever adaptações futuras",
       "b": "Estimar o grau de parentesco evolutivo",
-      "c": "Prever adaptações futuras",
-      "d": "Alterar o curso da evolução"
+      "c": "Alterar o curso da evolução",
+      "d": "Determinar exactamente quando divergiram"
     },
     "correct": "b"
   },
@@ -256,10 +256,10 @@
     "id": "medium24",
     "prompt": "A evolução de resistência a pesticidas em insetos é um exemplo de:",
     "choices": {
-      "a": "Adaptação Lamarckiana",
+      "a": "Deriva genética aleatória",
       "b": "Seleção natural em ação",
-      "c": "Deriva genética aleatória",
-      "d": "Especiação alopátrica"
+      "c": "Especiação alopátrica",
+      "d": "Adaptação Lamarckiana"
     },
     "correct": "b"
   },
@@ -267,53 +267,53 @@
     "id": "medium25",
     "prompt": "O conceito de nicho ecológico é importante para a evolução porque:",
     "choices": {
-      "a": "Define limites para a adaptação",
-      "b": "Determina exactamente como uma espécie vai evoluir",
-      "c": "Estabelece pressões seletivas específicas",
-      "d": "Impede a competição interespecífica"
+      "a": "Estabelece pressões seletivas específicas",
+      "b": "Impede a competição interespecífica",
+      "c": "Determina exactamente como uma espécie vai evoluir",
+      "d": "Define limites para a adaptação"
     },
-    "correct": "c"
+    "correct": "a"
   },
   {
     "id": "medium26",
     "prompt": "A existência de órgãos análogos (como asas de inseto e asas de ave) demonstra:",
     "choices": {
-      "a": "Ancestral comum recente",
-      "b": "Adaptação independente à mesma função",
+      "a": "Adaptação independente à mesma função",
+      "b": "Ancestral comum recente",
       "c": "Evolução regressiva",
       "d": "Convergência genética"
     },
-    "correct": "b"
+    "correct": "a"
   },
   {
     "id": "medium27",
     "prompt": "Em biologia evolutiva, 'aptidão' refere-se principalmente à:",
     "choices": {
-      "a": "Capacidade atlética do organismo",
-      "b": "Contribuição genética para gerações futuras",
-      "c": "Adaptabilidade inmediata a qualquer mudança",
-      "d": "Expectativa de vida do organismo"
+      "a": "Contribuição genética para gerações futuras",
+      "b": "Adaptabilidade inmediata a qualquer mudança",
+      "c": "Expectativa de vida do organismo",
+      "d": "Capacidade atlética do organismo"
     },
-    "correct": "b"
+    "correct": "a"
   },
   {
     "id": "medium28",
     "prompt": "A especiação por poliploidia (alteração no número de cromossomos) é mais comum em:",
     "choices": {
       "a": "Animais vertebrados",
-      "b": "Plantas",
+      "b": "Fungos",
       "c": "Bactérias",
-      "d": "Fungos"
+      "d": "Plantas"
     },
-    "correct": "b"
+    "correct": "d"
   },
   {
     "id": "medium29",
     "prompt": "O princípio de Hardy-Weinberg permite aos cientistas:",
     "choices": {
-      "a": "Prever exactamente como uma população vai evoluir",
+      "a": "Determinar a idade de uma população",
       "b": "Identificar quando uma população não está evoluindo",
-      "c": "Determinar a idade de uma população",
+      "c": "Prever exactamente como uma população vai evoluir",
       "d": "Alterar artificialmente as frequências alélicas"
     },
     "correct": "b"
@@ -322,66 +322,66 @@
     "id": "medium30",
     "prompt": "A migração de indivíduos entre populações diferentes:",
     "choices": {
-      "a": "Sempre causa especiação",
-      "b": "Impede a divergência evolutiva",
-      "c": "Introduz nova variabilidade genética",
-      "d": "Reduz a adaptação local"
+      "a": "Reduz a adaptação local",
+      "b": "Introduz nova variabilidade genética",
+      "c": "Sempre causa especiação",
+      "d": "Impede a divergência evolutiva"
     },
-    "correct": "c"
+    "correct": "b"
   },
   {
     "id": "medium31",
     "prompt": "A seleção natural age sobre:",
     "choices": {
-      "a": "Indivíduos",
+      "a": "Espécies",
       "b": "Populações",
-      "c": "Espécies",
-      "d": "Comunidades"
+      "c": "Comunidades",
+      "d": "Indivíduos"
     },
-    "correct": "a"
+    "correct": "d"
   },
   {
     "id": "medium32",
     "prompt": "A evolução do olho em diferentes linhagens animais ilustra:",
     "choices": {
-      "a": "Convergência evolutiva",
-      "b": "Divergência adaptativa",
-      "c": "Evolução regressiva",
-      "d": "Estase evolutiva"
+      "a": "Divergência adaptativa",
+      "b": "Convergência evolutiva",
+      "c": "Estase evolutiva",
+      "d": "Evolução regressiva"
     },
-    "correct": "a"
+    "correct": "b"
   },
   {
     "id": "medium33",
     "prompt": "O tempo necessário para a especiação:",
     "choices": {
-      "a": "É sempre o mesmo para todos os organismos",
-      "b": "Varia significativamente entre diferentes linhagens",
-      "c": "É mais rápido em animais que em plantas",
-      "d": "Depende exclusivamente do tamanho corporal"
+      "a": "Varia significativamente entre diferentes linhagens",
+      "b": "Depende exclusivamente do tamanho corporal",
+      "c": "É sempre o mesmo para todos os organismos",
+      "d": "É mais rápido em animais que em plantas"
     },
-    "correct": "b"
+    "correct": "a"
   },
   {
     "id": "medium34",
     "prompt": "A teoria da rainha vermelha explica:",
     "choices": {
-      "a": "Porque sexo evoluiu",
-      "b": "Como ocorre a seleção sexual",
-      "c": "A razão da estase evolutiva",
-      "d": "O mecanismo da deriva genética"
+      "a": "Como ocorre a seleção sexual",
+      "b": "O mecanismo da deriva genética",
+      "c": "Porque sexo evoluiu",
+      "d": "A razão da estase evolutiva"
     },
-    "correct": "a"
+    "correct": "c"
   },
   {
     "id": "medium35",
     "prompt": "A compreensão da evolução é fundamental para:",
     "choices": {
       "a": "Apenas classificação de organismos",
-      "b": "Diversas áreas da biologia e medicina",
+      "b": "Somente estudos comportamentais",
       "c": "Exclusivamente ecologia",
-      "d": "Somente estudos comportamentais"
+      "d": "Diversas áreas da biologia e medicina"
     },
-    "correct": "b"
+    "correct": "d"
   }
 ]

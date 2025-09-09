@@ -3,45 +3,45 @@
     "id": "easy01",
     "prompt": "Quem é considerado o principal cientista por desenvolver a Teoria da Evolução por meio da Seleção Natural?",
     "choices": {
-      "a": "Isaac Newton",
-      "b": "Charles Darwin",
-      "c": "Albert Einstein",
+      "a": "Charles Darwin",
+      "b": "Albert Einstein",
+      "c": "Isaac Newton",
       "d": "Louis Pasteur"
     },
-    "correct": "b"
+    "correct": "a"
   },
   {
     "id": "easy02",
     "prompt": "O que é uma adaptação evolutiva?",
     "choices": {
-      "a": "Uma característica que surge durante a vida do organismo.",
-      "b": "Uma característica hereditária que aumenta a chance de sobrevivência e reprodução.",
-      "c": "A escolha consciente de um animal para mudar seu corpo.",
+      "a": "Uma característica hereditária que aumenta a chance de sobrevivência e reprodução.",
+      "b": "A escolha consciente de um animal para mudar seu corpo.",
+      "c": "Uma característica que surge durante a vida do organismo.",
       "d": "O cruzamento entre duas espécies diferentes."
     },
-    "correct": "b"
+    "correct": "a"
   },
   {
     "id": "easy03",
     "prompt": "O que é a Seleção Natural?",
     "choices": {
-      "a": "O processo onde os humanos selecionam as plantas e animais mais fortes.",
-      "b": "O processo onde organismos escolhem conscientemente se adaptar.",
-      "c": "O processo onde os organismos mais bem adaptados ao ambiente sobrevivem e se reproduzem.",
-      "d": "A sobrevivência apenas do organismo mais forte em uma luta."
+      "a": "A sobrevivência apenas do organismo mais forte em uma luta.",
+      "b": "O processo onde os organismos mais bem adaptados ao ambiente sobrevivem e se reproduzem.",
+      "c": "O processo onde os humanos selecionam as plantas e animais mais fortes.",
+      "d": "O processo onde organismos escolhem conscientemente se adaptar."
     },
-    "correct": "c"
+    "correct": "b"
   },
   {
     "id": "easy04",
     "prompt": "Qual das seguintes opções é uma evidência da evolução?",
     "choices": {
-      "a": "A vontade dos animais de mudar.",
-      "b": "O registro fóssil",
-      "c": "A necessidade de sobreviver",
-      "d": "A quantidade de comida disponível"
+      "a": "A quantidade de comida disponível",
+      "b": "A vontade dos animais de mudar.",
+      "c": "O registro fóssil",
+      "d": "A necessidade de sobreviver"
     },
-    "correct": "b"
+    "correct": "c"
   },
   {
     "id": "easy05",
@@ -49,8 +49,8 @@
     "choices": {
       "a": "Órgãos com a mesma função em espécies diferentes.",
       "b": "Órgãos com estrutura similar devido a uma ancestralidade comum, mas que podem ter funções diferentes.",
-      "c": "Órgãos que não têm função nenhuma.",
-      "d": "Órgãos artificiais criados em laboratório."
+      "c": "Órgãos artificiais criados em laboratório.",
+      "d": "Órgãos que não têm função nenhuma."
     },
     "correct": "b"
   },
@@ -58,65 +58,65 @@
     "id": "easy06",
     "prompt": "O que é um fóssil?",
     "choices": {
-      "a": "Uma rocha comum.",
-      "b": "Um osso de animal recente.",
-      "c": "Restos ou vestígios preservados de organismos que viveram no passado.",
-      "d": "Uma planta desidratada."
+      "a": "Um osso de animal recente.",
+      "b": "Uma planta desidratada.",
+      "c": "Uma rocha comum.",
+      "d": "Restos ou vestígios preservados de organismos que viveram no passado."
     },
-    "correct": "c"
+    "correct": "d"
   },
   {
     "id": "easy07",
     "prompt": "O que é uma mutação genética?",
     "choices": {
       "a": "Uma mudança voluntária no DNA.",
-      "b": "Uma mudança repentina na cor dos olhos por vontade própria.",
-      "c": "Uma alteração ou erro na sequência do DNA.",
-      "d": "A cópia perfeita do DNA durante a divisão celular."
+      "b": "A cópia perfeita do DNA durante a divisão celular.",
+      "c": "Uma mudança repentina na cor dos olhos por vontade própria.",
+      "d": "Uma alteração ou erro na sequência do DNA."
     },
-    "correct": "c"
+    "correct": "d"
   },
   {
     "id": "easy08",
     "prompt": "Qual é a principal fonte de variação genética em uma população, crucial para a evolução?",
     "choices": {
-      "a": "A clonagem",
-      "b": "As mutações",
+      "a": "As mutações",
+      "b": "A clonagem",
       "c": "A alimentação",
       "d": "O exercício físico"
     },
-    "correct": "b"
+    "correct": "a"
   },
   {
     "id": "easy09",
     "prompt": "O que a Biogeografia estuda como evidência da evolução?",
     "choices": {
-      "a": "A distribuição das espécies pelo planeta.",
-      "b": "A cor dos animais.",
-      "c": "O tamanho dos fósseis.",
-      "d": "A velocidade dos animais."
+      "a": "A cor dos animais.",
+      "b": "O tamanho dos fósseis.",
+      "c": "A velocidade dos animais.",
+      "d": "A distribuição das espécies pelo planeta."
     },
-    "correct": "a"
+    "correct": "d"
   },
   {
     "id": "easy10",
     "prompt": "O que é um órgão vestigial?",
     "choices": {
-      "a": "Um órgão muito importante.",
-      "b": "Um órgão artificial.",
-      "c": "Uma estrutura que não tem função aparente no organismo, mas tinha em ancestrais.",
-      "d": "Um órgão que só os humanos possuem."
+      "a": "Um órgão artificial.",
+      "b": "Um órgão muito importante.",
+      "c": "Um órgão que só os humanos possuem.",
+      "d": "Uma estrutura que não tem função aparente no organismo, mas tinha em ancestrais."
     },
-    "correct": "c"
+    "correct": "d"
   },
   {
     "id": "easy11",
     "prompt": "O que é especiação?",
     "choices": {
       "a": "O processo de formação de uma nova espécie.",
-      "b": "O processo de extinção de uma espécie.",
+      "b": "A classificação de espécies por cor.",
       "c": "A observação de espécies em zoológicos.",
-      "d": "A classificação de espécies por cor."
+      "d": "O processo de extinção de uma espécie."
     },
     "correct": "a"
   },
@@ -124,10 +124,10 @@
     "id": "easy12",
     "prompt": "Qual dos itens abaixo é um exemplo de isolamento geográfico, que pode levar à especiação?",
     "choices": {
-      "a": "Dois grupos da mesma espécie preferirem comidas diferentes.",
+      "a": "Dois grupos da mesma espécie dormirem em horários diferentes.",
       "b": "Dois grupos da mesma espécie serem separados por um rio que se formou.",
       "c": "Dois grupos da mesma espécie terem cores diferentes.",
-      "d": "Dois grupos da mesma espécie dormirem em horários diferentes."
+      "d": "Dois grupos da mesma espécie preferirem comidas diferentes."
     },
     "correct": "b"
   },
@@ -135,12 +135,12 @@
     "id": "easy13",
     "prompt": "O que é isolamento reprodutivo?",
     "choices": {
-      "a": "Quando duas espécies diferentes podem se cruzar e ter filhos férteis.",
-      "b": "Quando duas espécies não podem mais se cruzar ou produzir descendentes férteis.",
-      "c": "Quando uma espécie se isola para dormir.",
+      "a": "Quando uma espécie se isola para dormir.",
+      "b": "Quando duas espécies diferentes podem se cruzar e ter filhos férteis.",
+      "c": "Quando duas espécies não podem mais se cruzar ou produzir descendentes férteis.",
       "d": "Quando os animais decidem não ter filhos."
     },
-    "correct": "b"
+    "correct": "c"
   },
   {
     "id": "easy14",
@@ -148,8 +148,8 @@
     "choices": {
       "a": "A célula",
       "b": "O gene",
-      "c": "O músculo",
-      "d": "Os ossos"
+      "c": "Os ossos",
+      "d": "O músculo"
     },
     "correct": "b"
   },
@@ -157,221 +157,221 @@
     "id": "easy15",
     "prompt": "A teoria da evolução sugere que todas as espécies atuais compartilham:",
     "choices": {
-      "a": "O mesmo tamanho",
-      "b": "Um ancestral comum no passado distante",
-      "c": "A mesma cor",
-      "d": "O mesmo habitat"
+      "a": "Um ancestral comum no passado distante",
+      "b": "O mesmo tamanho",
+      "c": "O mesmo habitat",
+      "d": "A mesma cor"
     },
-    "correct": "b"
+    "correct": "a"
   },
   {
     "id": "easy16",
     "prompt": "O que é o \"registro fóssil\"?",
     "choices": {
-      "a": "Uma coleção de músicas antigas.",
-      "b": "A coleção de todos os fósseis descobertos e as informações que fornecem.",
-      "c": "O registro de nascimentos e mortes de uma população.",
-      "d": "Um livro sobre rochas."
+      "a": "A coleção de todos os fósseis descobertos e as informações que fornecem.",
+      "b": "Um livro sobre rochas.",
+      "c": "Uma coleção de músicas antigas.",
+      "d": "O registro de nascimentos e mortes de uma população."
     },
-    "correct": "b"
+    "correct": "a"
   },
   {
     "id": "easy17",
     "prompt": "Qual desses é um exemplo de adaptação?",
     "choices": {
       "a": "Um animal ficar com sede.",
-      "b": "Um urso polar ter pelagem branca para se camuflar na neve.",
-      "c": "Um pássaro cantar.",
-      "d": "Um peixe nadar rápido para fugir de um predador que ele vê."
+      "b": "Um pássaro cantar.",
+      "c": "Um peixe nadar rápido para fugir de um predador que ele vê.",
+      "d": "Um urso polar ter pelagem branca para se camuflar na neve."
     },
-    "correct": "b"
+    "correct": "d"
   },
   {
     "id": "easy18",
     "prompt": "O que é evolução?",
     "choices": {
       "a": "A mudança repentina de um organismo durante sua vida.",
-      "b": "A mudança nas características hereditárias de uma população ao longo de várias gerações.",
-      "c": "A sobrevivência do organismo mais inteligente.",
-      "d": "A escolha de uma espécie de mudar de habitat."
+      "b": "A escolha de uma espécie de mudar de habitat.",
+      "c": "A mudança nas características hereditárias de uma população ao longo de várias gerações.",
+      "d": "A sobrevivência do organismo mais inteligente."
     },
-    "correct": "b"
+    "correct": "c"
   },
   {
     "id": "easy19",
     "prompt": "O que Darwin observou nas ilhas Galápagos que foi crucial para sua teoria?",
     "choices": {
-      "a": "Que não havia animais lá.",
-      "b": "Que os tentilhões tinham bicos diferentes adaptados a diferentes tipos de comida em cada ilha.",
-      "c": "Que todos os animais eram iguais.",
-      "d": "Que as ilhas eram muito quentes."
+      "a": "Que as ilhas eram muito quentes.",
+      "b": "Que todos os animais eram iguais.",
+      "c": "Que não havia animais lá.",
+      "d": "Que os tentilhões tinham bicos diferentes adaptados a diferentes tipos de comida em cada ilha."
     },
-    "correct": "b"
+    "correct": "d"
   },
   {
     "id": "easy20",
     "prompt": "O que significa \"sobrevivência do mais apto\"?",
     "choices": {
-      "a": "Apenas os organismos mais fortes fisicamente sobrevivem.",
-      "b": "Os organismos com características mais vantajosas para aquele ambiente têm maior chance de sobreviver e se reproduzir.",
-      "c": "Os organismos mais inteligentes sempre vencem.",
-      "d": "Os organismos mais rápidos vencem todas as corridas."
+      "a": "Os organismos com características mais vantajosas para aquele ambiente têm maior chance de sobreviver e se reproduzir.",
+      "b": "Os organismos mais inteligentes sempre vencem.",
+      "c": "Os organismos mais rápidos vencem todas as corridas.",
+      "d": "Apenas os organismos mais fortes fisicamente sobrevivem."
     },
-    "correct": "b"
+    "correct": "a"
   },
   {
     "id": "easy21",
     "prompt": "O que é irradiação adaptativa?",
     "choices": {
-      "a": "Quando uma espécie se torna extinta.",
-      "b": "Quando uma espécie ancestral diversifica-se em várias espécies, cada uma adaptada a um ambiente específico.",
-      "c": "Quando uma espécie para de se adaptar.",
-      "d": "Quando a luz do sol influencia a cor dos animais."
+      "a": "Quando a luz do sol influencia a cor dos animais.",
+      "b": "Quando uma espécie para de se adaptar.",
+      "c": "Quando uma espécie ancestral diversifica-se em várias espécies, cada uma adaptada a um ambiente específico.",
+      "d": "Quando uma espécie se torna extinta."
     },
-    "correct": "b"
+    "correct": "c"
   },
   {
     "id": "easy22",
     "prompt": "Qual fator NÃO é uma força motriz da evolução?",
     "choices": {
-      "a": "Seleção Natural",
-      "b": "Mutação",
-      "c": "Deriva Genética",
-      "d": "Escolha consciente dos organismos para evoluir"
+      "a": "Deriva Genética",
+      "b": "Escolha consciente dos organismos para evoluir",
+      "c": "Seleção Natural",
+      "d": "Mutação"
     },
-    "correct": "d"
+    "correct": "b"
   },
   {
     "id": "easy23",
     "prompt": "O que é endemismo?",
     "choices": {
-      "a": "Quando uma espécie é encontrada em todos os lugares do mundo.",
-      "b": "Quando uma espécie ocorre naturalmente apenas em uma região geográfica específica.",
-      "c": "Quando uma espécie é muito comum.",
-      "d": "Quando uma espécie é domesticada."
+      "a": "Quando uma espécie ocorre naturalmente apenas em uma região geográfica específica.",
+      "b": "Quando uma espécie é encontrada em todos os lugares do mundo.",
+      "c": "Quando uma espécie é domesticada.",
+      "d": "Quando uma espécie é muito comum."
     },
-    "correct": "b"
+    "correct": "a"
   },
   {
     "id": "easy24",
     "prompt": "Qual é o papel da variação genética na evolução?",
     "choices": {
-      "a": "Ela não tem nenhum papel.",
-      "b": "Ela garante que todos os indivíduos sejam idênticos.",
-      "c": "Ela fornece a matéria-prima sobre a qual a seleção natural pode atuar.",
-      "d": "Ela impede a evolução."
+      "a": "Ela impede a evolução.",
+      "b": "Ela não tem nenhum papel.",
+      "c": "Ela garante que todos os indivíduos sejam idênticos.",
+      "d": "Ela fornece a matéria-prima sobre a qual a seleção natural pode atuar."
     },
-    "correct": "c"
+    "correct": "d"
   },
   {
     "id": "easy25",
     "prompt": "O que é considerado a \"unidade evolutiva\", ou seja, o que realmente evolui?",
     "choices": {
-      "a": "O indivíduo",
-      "b": "A célula",
-      "c": "A população",
-      "d": "O ecossistema"
+      "a": "O ecossistema",
+      "b": "O indivíduo",
+      "c": "A célula",
+      "d": "A população"
     },
-    "correct": "c"
+    "correct": "d"
   },
   {
     "id": "easy26",
     "prompt": "O que é isolamento temporal como mecanismo de especiação?",
     "choices": {
       "a": "Espécies que vivem em habitats diferentes.",
-      "b": "Espécies que se reproduzem em épocas diferentes do ano ou do dia.",
-      "c": "Espécies que têm rituais de acasalamento diferentes.",
-      "d": "Espécies que são incapazes de cruzar anatomicamente."
+      "b": "Espécies que são incapazes de cruzar anatomicamente.",
+      "c": "Espécies que se reproduzem em épocas diferentes do ano ou do dia.",
+      "d": "Espécies que têm rituais de acasalamento diferentes."
     },
-    "correct": "b"
+    "correct": "c"
   },
   {
     "id": "easy27",
     "prompt": "O que significa \"aptidão\" (fitness) no contexto da evolução?",
     "choices": {
-      "a": "Ser fisicamente forte.",
-      "b": "A capacidade de um organismo de sobreviver e se reproduzir, passando seus genes para a geração seguinte.",
-      "c": "A velocidade de um animal.",
-      "d": "A inteligência de um animal."
+      "a": "A inteligência de um animal.",
+      "b": "A velocidade de um animal.",
+      "c": "A capacidade de um organismo de sobreviver e se reproduzir, passando seus genes para a geração seguinte.",
+      "d": "Ser fisicamente forte."
     },
-    "correct": "b"
+    "correct": "c"
   },
   {
     "id": "easy28",
     "prompt": "Comparar embriões de espécies diferentes é uma evidência evolutiva porque:",
     "choices": {
       "a": "Todos os embriões são idênticos.",
-      "b": "Embriões de espécies diferentes mostram semelhanças nas primeiras fases de desenvolvimento.",
-      "c": "Os embriões não fornecem nenhuma informação.",
-      "d": "Cada embrião é completamente único."
+      "b": "Cada embrião é completamente único.",
+      "c": "Embriões de espécies diferentes mostram semelhanças nas primeiras fases de desenvolvimento.",
+      "d": "Os embriões não fornecem nenhuma informação."
     },
-    "correct": "b"
+    "correct": "c"
   },
   {
     "id": "easy29",
     "prompt": "O que é um nicho ecológico?",
     "choices": {
       "a": "O lugar físico onde um animal dorme.",
-      "b": "O papel funcional de uma espécie no ecossistema (o que ela come, quem a come, como se comporta).",
-      "c": "O nome científico de uma espécie.",
-      "d": "O país onde uma espécie vive."
+      "b": "O nome científico de uma espécie.",
+      "c": "O país onde uma espécie vive.",
+      "d": "O papel funcional de uma espécie no ecossistema (o que ela come, quem a come, como se comporta)."
     },
-    "correct": "b"
+    "correct": "d"
   },
   {
     "id": "easy30",
     "prompt": "O que é coevolução?",
     "choices": {
-      "a": "Quando duas espécies evoluem independentemente.",
+      "a": "Quando a evolução acontece muito rapidamente.",
       "b": "Quando uma espécie para de evoluir.",
-      "c": "Quando duas espécies evoluem em resposta uma à outra (ex.: predador e presa).",
-      "d": "Quando a evolução acontece muito rapidamente."
+      "c": "Quando duas espécies evoluem independentemente.",
+      "d": "Quando duas espécies evoluem em resposta uma à outra (ex.: predador e presa)."
     },
-    "correct": "c"
+    "correct": "d"
   },
   {
     "id": "easy31",
     "prompt": "Qual desses NÃO é um tipo de isolamento reprodutivo pré-zigótico (que impede a fecundação)?",
     "choices": {
-      "a": "Isolamento de habitat",
-      "b": "Isolamento temporal",
+      "a": "Esterilidade do híbrido (o filho de espécies diferentes não é fértil)",
+      "b": "Isolamento de habitat",
       "c": "Isolamento comportamental",
-      "d": "Esterilidade do híbrido (o filho de espécies diferentes não é fértil)"
+      "d": "Isolamento temporal"
     },
-    "correct": "d"
+    "correct": "a"
   },
   {
     "id": "easy32",
     "prompt": "O que a anatomia comparada estuda?",
     "choices": {
       "a": "Apenas a anatomia humana.",
-      "b": "As semelhanças e diferenças na estrutura corporal entre espécies diferentes.",
-      "c": "A anatomia de rochas.",
-      "d": "A anatomia de fósseis que nunca são comparados."
+      "b": "A anatomia de fósseis que nunca são comparados.",
+      "c": "As semelhanças e diferenças na estrutura corporal entre espécies diferentes.",
+      "d": "A anatomia de rochas."
     },
-    "correct": "b"
+    "correct": "c"
   },
   {
     "id": "easy33",
     "prompt": "O que é deriva genética?",
     "choices": {
       "a": "Uma mudança deliberada nos genes.",
-      "b": "Uma mudança aleatória na frequência dos genes de uma população, mais perceptível em populações pequenas.",
-      "c": "O mesmo que seleção natural.",
+      "b": "O mesmo que seleção natural.",
+      "c": "Uma mudança aleatória na frequência dos genes de uma população, mais perceptível em populações pequenas.",
       "d": "A derrota de um gene por outro."
     },
-    "correct": "b"
+    "correct": "c"
   },
   {
     "id": "easy34",
     "prompt": "O que é um fóssil vivo?",
     "choices": {
-      "a": "Um fóssil que ainda está respirando.",
-      "b": "Uma espécie atual que se parece muito com espécies antigas conhecidas por fósseis e que mudou muito pouco ao longo do tempo.",
+      "a": "Uma espécie atual que se parece muito com espécies antigas conhecidas por fósseis e que mudou muito pouco ao longo do tempo.",
+      "b": "Um fóssil que ainda está respirando.",
       "c": "Um fóssil de um animal que era vivo quando foi fossilizado.",
       "d": "Um tipo especial de rocha."
     },
-    "correct": "b"
+    "correct": "a"
   },
   {
     "id": "easy35",
@@ -379,8 +379,8 @@
     "choices": {
       "a": "Uma nova espécie se forma sem barreiras geográficas.",
       "b": "Uma nova espécie se forma devido a uma barreira geográfica que separa populações.",
-      "c": "Todas as espécies se formam no mesmo lugar.",
-      "d": "Duas espécies decidem se fundir em uma."
+      "c": "Duas espécies decidem se fundir em uma.",
+      "d": "Todas as espécies se formam no mesmo lugar."
     },
     "correct": "b"
   }
